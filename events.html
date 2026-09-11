@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events &amp; Gallery — Anudip Foundation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">A</span>
+      <span class="brand-name">Anudip Foundation</span>
+    </a>
+    <input type="checkbox" id="navCheck">
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="courses.html">Courses</a>
+      <a href="portfolio.html">Student Portfolio</a>
+      <a href="faculty.html">Faculty</a>
+      <a href="events.html" aria-current="page">Events &amp; Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="donate.html" class="btn btn-solid">Donate</a>
+      <label class="nav-toggle-label" for="navCheck" aria-label="Toggle menu"><span></span><span></span><span></span></label>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Events &amp; Gallery</p>
+      <h1>Workshops, hackathons and the moments in between</h1>
+      <p>Learning at Anudip doesn't stop at the syllabus — here's what's coming up, and a look back at recent activity.</p>
+    </div>
+  </section>
+
+  <section class="events-list">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Upcoming events</h2>
+      </div>
+
+      <div class="event-row">
+        <div class="event-date"><span class="day">14</span><span class="month">Oct</span></div>
+        <div class="event-info">
+          <h3>48-Hour Hackathon: Build for Bharat</h3>
+          <p>Teams build a working prototype solving a local community problem, judged by industry mentors.</p>
+        </div>
+        <span class="event-tag">Hackathon</span>
+      </div>
+
+      <div class="event-row">
+        <div class="event-date"><span class="day">22</span><span class="month">Oct</span></div>
+        <div class="event-info">
+          <h3>AI in the Workplace — Employer Workshop</h3>
+          <p>A hands-on session with corporate partners on using AI tools responsibly at work.</p>
+        </div>
+        <span class="event-tag">Workshop</span>
+      </div>
+
+      <div class="event-row">
+        <div class="event-date"><span class="day">05</span><span class="month">Nov</span></div>
+        <div class="event-info">
+          <h3>Mock Interview Day</h3>
+          <p>Graduating learners sit live mock interviews with volunteer professionals from partner companies.</p>
+        </div>
+        <span class="event-tag">Career prep</span>
+      </div>
+
+      <div class="event-row">
+        <div class="event-date"><span class="day">19</span><span class="month">Nov</span></div>
+        <div class="event-info">
+          <h3>DISHA Job Drive — Kolkata Centre</h3>
+          <p>An on-site hiring drive bringing multiple employers to campus for same-day interviews.</p>
+        </div>
+        <span class="event-tag">Placement drive</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap gallery-grid">
+    <div class="gallery-heading">
+      <h2>Gallery</h2>
+      <p>Click a tile for a caption from that moment.</p>
+    </div>
+    <div class="gallery-item" style="background-image:url('images/event-certificate-day.jpg')" data-caption="Certificate distribution at Science City, Kolkata"><span class="gallery-label">Certificate Day</span></div>
+    <div class="gallery-item" style="background-image:url('images/event-project-showcase.jpg')" data-caption="Students presenting their final projects to a panel of mentors"><span class="gallery-label">Project Showcase</span></div>
+    <div class="gallery-item" style="background-image:url('images/event-soft-skills.jpg')" data-caption="A soft-skills class focused on communication and teamwork"><span class="gallery-label">Soft Skills Class</span></div>
+    <div class="gallery-item" style="background-image:url('images/event-hardware-lab.jpg')" data-caption="Hands-on hardware and networking practical session"><span class="gallery-label">Hardware Lab</span></div>
+    <div class="gallery-item" style="background-image:url('images/event-ai-panel.jpg')" data-caption="Panel discussion on AI and the changing employment landscape"><span class="gallery-label">AI Panel</span></div>
+    <div class="gallery-item" style="background-image:url('images/event-job-drive.jpg')" data-caption="The DISHA job drive connecting graduates with employers"><span class="gallery-label">Job Drive</span></div>
+    <div class="gallery-item" style="background-image:url('images/event-graduation-day.jpg')" data-caption="Graduates celebrating after completing their English and IT training"><span class="gallery-label">Graduation Day</span></div>
+    <div class="gallery-item" style="background-image:url('images/event-team-meet.jpg')" data-caption="Regional trainers meeting at the Annual Strategy Meet"><span class="gallery-label">Team Meet</span></div>
+  </div>
+
+</main>
+
+<!-- Lightbox modal: hidden by default, opened by script.js -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-box">
+    <h3 id="lightboxTitle">Caption</h3>
+    <p>Photo from an Anudip Foundation event.</p>
+    <button class="btn btn-outline lightbox-close" id="lightboxClose">Close</button>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand-mark" aria-hidden="true">A</span>
+      <p>Anudip Foundation for Social Welfare<br>Life. Transformed.</p>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h4>Explore</h4>
+        <a href="about.html">About Us</a>
+        <a href="courses.html">Courses</a>
+        <a href="portfolio.html">Student Portfolio</a>
+      </div>
+      <div>
+        <h4>More</h4>
+        <a href="faculty.html">Faculty</a>
+        <a href="events.html">Events &amp; Gallery</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <a href="https://www.facebook.com/AnudipFoundation/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.instagram.com/anudipfoundation/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/company/anudip-foundation-for-social-welfare" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>© 2026 Anudip Foundation for Social Welfare. Built as a student project, inspired by the real Anudip Foundation.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="config.js"></script><script src="chatbot.js"></script>
+</body>
+</html>
+
+

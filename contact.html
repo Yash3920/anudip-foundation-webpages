@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Anudip Foundation</title>
+<meta name="description" content="Get in touch with Anudip Foundation. Reach our Kolkata head office or Bangalore Malleshwaram branch for admissions, volunteering, partnerships, or media queries.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">A</span>
+      <span class="brand-name">Anudip Foundation</span>
+    </a>
+    <input type="checkbox" id="navCheck">
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="courses.html">Courses</a>
+      <a href="portfolio.html">Student Portfolio</a>
+      <a href="faculty.html">Faculty</a>
+      <a href="events.html">Events &amp; Gallery</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="donate.html" class="btn btn-solid">Donate</a>
+      <label class="nav-toggle-label" for="navCheck" aria-label="Toggle menu"><span></span><span></span><span></span></label>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Contact Us</p>
+      <h1>Questions, partnerships, or just want to visit?</h1>
+      <p>Reach out for admissions, volunteering, corporate partnerships or media queries — we reply within two working days.</p>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-copy">
+        <h2>Reach us directly</h2>
+        <p>Or use the form and we'll route it to the right team.</p>
+
+        <div class="branch-cards">
+          <div class="branch-card">
+            <span class="branch-label">🏢 Head Office — Kolkata</span>
+            <ul class="contact-details">
+              <li><strong>Address</strong>Mira Towers, 8th &amp; 9th Floor, Sector V, Salt Lake, Kolkata, West Bengal 700091</li>
+              <li><strong>Phone</strong>+91 33 2357 7406</li>
+              <li><strong>Email</strong>connect@anudip.org</li>
+              <li><strong>Hours</strong>Monday–Saturday, 9:30 AM – 6:00 PM IST</li>
+            </ul>
+          </div>
+
+          <div class="branch-card branch-card--highlight">
+            <span class="branch-label">📍 Bangalore Branch — Malleshwaram</span>
+            <ul class="contact-details">
+              <li><strong>Address</strong>#224, 14th Cross, Sampige Road, Malleshwaram, Bangalore – 560003</li>
+              <li><strong>Email</strong>connect@anudip.org</li>
+              <li><strong>Hours</strong>Monday–Saturday, 9:30 AM – 6:00 PM IST</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="map-box">
+          <iframe
+            title="Anudip Foundation — Malleshwaram, Bangalore"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.359703!2d77.5701!3d13.0037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d6e2f1a8b01%3A0x0!2s224%2C%2014th%20Cross%2C%20Sampige%20Rd%2C%20Malleshwaram%2C%20Bengaluru%2C%20Karnataka%20560003!5e0!3m2!1sen!2sin!4v1600000000000"
+            width="100%" height="260" style="border:0; border-radius:8px;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+          <span class="field-error" data-error-for="name"></span>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+          <span class="field-error" data-error-for="email"></span>
+        </div>
+        <div class="field">
+          <label for="reason">I'm reaching out about</label>
+          <select id="reason" name="reason">
+            <option value="admissions">Admissions / Courses</option>
+            <option value="volunteering">Volunteering</option>
+            <option value="corporate">Corporate partnership</option>
+            <option value="media">Media enquiry</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <span class="field-error" data-error-for="message"></span>
+        </div>
+        <button type="submit" class="btn btn-solid btn-block">Send message</button>
+        <p class="form-note" id="contactNote" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="brand-mark" aria-hidden="true">A</span>
+      <p>Anudip Foundation for Social Welfare<br>Life. Transformed.</p>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h4>Explore</h4>
+        <a href="about.html">About Us</a>
+        <a href="courses.html">Courses</a>
+        <a href="portfolio.html">Student Portfolio</a>
+      </div>
+      <div>
+        <h4>More</h4>
+        <a href="faculty.html">Faculty</a>
+        <a href="events.html">Events &amp; Gallery</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <a href="https://www.facebook.com/AnudipFoundation/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.instagram.com/anudipfoundation/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/company/anudip-foundation-for-social-welfare" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>© 2026 Anudip Foundation for Social Welfare. Built as a student project, inspired by the real Anudip Foundation.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="config.js"></script>
+<script src="chatbot.js"></script>
+</body>
+</html>
+
