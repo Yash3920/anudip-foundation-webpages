@@ -1,0 +1,712 @@
+/* =========================================================
+   COURSES PAGE — page-specific styles
+   Shared tokens, nav, buttons, footer come from index.css
+   ========================================================= */
+
+/* =========================================================
+   PAGE HERO with animated learning-path illustration
+   ========================================================= */
+.page-hero {
+    padding: 96px 0 72px;
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(160deg, var(--paper-soft) 0%, var(--paper) 60%);
+    position: relative;
+    overflow: hidden;
+}
+
+.page-hero::before {
+    content: "";
+    position: absolute;
+    top: -40%;
+    right: -8%;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--blue-soft) 0%, transparent 70%);
+    opacity: 0.6;
+    pointer-events: none;
+    animation: heroGlow 8s ease-in-out infinite;
+}
+
+@keyframes heroGlow {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.55;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 0.85;
+    }
+}
+
+.page-hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 56px;
+    align-items: center;
+}
+
+.page-hero-copy .eyebrow {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--blue);
+    font-weight: 600;
+    margin-bottom: 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.page-hero-copy h1 {
+    font-size: clamp(2rem, 4vw, 2.9rem);
+    max-width: 22ch;
+    margin-bottom: 18px;
+    letter-spacing: -0.02em;
+}
+
+.page-hero-copy p {
+    max-width: 58ch;
+    font-size: 1.08rem;
+    line-height: 1.7;
+}
+
+/* ---------- Art ---------- */
+.page-hero-art {
+    position: relative;
+    width: 100%;
+    max-width: 460px;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.art-glow {
+    position: absolute;
+    inset: 15%;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--blue-soft) 0%, transparent 70%);
+    opacity: 0.9;
+    animation: glowPulse 5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.75;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+.art-svg {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: visible;
+}
+
+/* ---------- Learning path ---------- */
+.path-line {
+    stroke: var(--blue);
+    stroke-width: 2.2;
+    stroke-dasharray: 7 9;
+    stroke-linecap: round;
+    opacity: 0.6;
+    animation: dashFlow 3s linear infinite;
+}
+
+@keyframes dashFlow {
+    to {
+        stroke-dashoffset: -32;
+    }
+}
+
+/* ---------- Pulse rings ---------- */
+.ring {
+    fill: none;
+    stroke: var(--blue);
+    stroke-width: 1.5;
+    opacity: 0;
+    transform-origin: 200px 200px;
+    animation: ringPulse 4.5s ease-out infinite;
+}
+
+.ring-2 {
+    animation-delay: 2.2s;
+}
+
+@keyframes ringPulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    70% {
+        transform: scale(2.2);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(2.2);
+        opacity: 0;
+    }
+}
+
+/* ---------- Milestone nodes ---------- */
+.mile {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: milePulse 3.6s ease-in-out infinite;
+}
+
+.mile-1 {
+    animation-delay: 0s;
+}
+
+.mile-2 {
+    animation-delay: 1.2s;
+}
+
+.mile-3 {
+    animation-delay: 2.4s;
+}
+
+@keyframes milePulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+.mile-bg {
+    fill: var(--blue);
+    filter: drop-shadow(0 6px 14px var(--blue-glow));
+}
+
+.mile-bg-2 {
+    fill: var(--blue-mid);
+}
+
+.mile-bg-3 {
+    fill: var(--blue-deep);
+}
+
+.mile-glyph {
+    fill: #fff;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 700;
+    dominant-baseline: middle;
+}
+
+/* ---------- Orbiting subject icons ---------- */
+.orbit-group {
+    transform-origin: 200px 200px;
+    animation: spin 26s linear infinite;
+}
+
+.orbit-2 {
+    animation-duration: 30s;
+    animation-direction: reverse;
+}
+
+.orbit-3 {
+    animation-duration: 34s;
+}
+
+.orbit-4 {
+    animation-duration: 22s;
+    animation-direction: reverse;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.icon-bg {
+    fill: var(--blue);
+    filter: drop-shadow(0 4px 10px var(--blue-glow));
+}
+
+.icon-bg-2 {
+    fill: var(--blue-mid);
+}
+
+.icon-bg-3 {
+    fill: var(--blue-deep);
+}
+
+.icon-bg-4 {
+    fill: var(--blue);
+}
+
+.icon-glyph {
+    fill: #fff;
+    font-family: var(--font-body);
+    font-size: 10px;
+    font-weight: 700;
+    dominant-baseline: middle;
+}
+
+/* =========================================================
+   COURSE FILTERS
+   ========================================================= */
+.course-filters-wrap {
+    padding: 44px 0 8px;
+    background: var(--paper);
+}
+
+.course-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.course-filters button {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 9px 18px;
+    border-radius: 999px;
+    border: 1.5px solid var(--line);
+    background: var(--paper);
+    color: var(--muted);
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.course-filters button:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+    transform: translateY(-1px);
+}
+
+.course-filters button.is-active {
+    border-color: var(--blue);
+    color: #fff;
+    background: var(--blue);
+    box-shadow: 0 6px 16px var(--blue-glow);
+}
+
+/* =========================================================
+   COURSE INTRO
+   ========================================================= */
+.course-grid-wrap {
+    padding: 32px 0 96px;
+    background: var(--paper);
+}
+
+.course-intro {
+    max-width: 68ch;
+    margin-bottom: 44px;
+}
+
+.course-intro h2 {
+    font-size: clamp(1.5rem, 3vw, 1.9rem);
+    margin-bottom: 14px;
+    letter-spacing: -0.02em;
+}
+
+.course-intro p {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--muted);
+}
+
+.course-intro strong {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+/* =========================================================
+   COURSE GRID — improved alignment
+   ========================================================= */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    align-items: stretch;
+}
+
+.course-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 26px 24px 22px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1),
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.course-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blue), var(--blue-mid));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--blue);
+}
+
+.course-card:hover::before {
+    transform: scaleX(1);
+}
+
+.course-tag {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--blue);
+    background: var(--blue-soft);
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+}
+
+.course-card h3 {
+    font-size: 1.12rem;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+    min-height: 2.6em;
+}
+
+.course-card p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--muted);
+    margin-bottom: 18px;
+    flex: 1;
+}
+
+.course-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 18px;
+}
+
+.course-meta span {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--muted);
+    padding: 4px 10px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--paper-soft);
+}
+
+.course-fee-row {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 16px;
+    border-top: 1px dashed var(--line);
+    margin-top: auto;
+}
+
+.course-fee-row .text-link {
+    color: var(--blue);
+    font-weight: 600;
+    font-size: 0.88rem;
+    border-bottom: 1.5px solid transparent;
+    transition: border-color 0.2s ease;
+    white-space: nowrap;
+}
+
+.course-fee-row .text-link:hover {
+    border-bottom-color: var(--blue);
+}
+
+/* Empty state */
+.course-empty {
+    text-align: center;
+    padding: 48px 0;
+    color: var(--muted);
+    font-size: 1rem;
+}
+
+/* Hidden card during filter */
+.course-card.is-hidden {
+    display: none;
+}
+
+/* =========================================================
+   WHY ANUDIP
+   ========================================================= */
+.highlights {
+    padding: 88px 0;
+    background: var(--paper-soft);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.section-head {
+    margin-bottom: 44px;
+    max-width: 56ch;
+}
+
+.section-head h2 {
+    position: relative;
+    display: inline-block;
+}
+
+.section-head h2::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 3px;
+    margin-top: 10px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--blue), var(--blue-mid));
+}
+
+.section-head p {
+    margin-top: 12px;
+    font-size: 1rem;
+}
+
+.highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.highlight-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.highlight-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+    border-color: var(--blue);
+}
+
+.highlight-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    background: var(--blue-soft);
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.highlight-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.highlight-card:hover .highlight-icon {
+    transform: scale(1.08) rotate(-5deg);
+    background: var(--blue);
+    color: #fff;
+}
+
+.highlight-card h3 {
+    font-size: 1.02rem;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+}
+
+.highlight-card p {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--muted);
+}
+
+/* =========================================================
+   CTA BAND
+   ========================================================= */
+.cta-band {
+    background: linear-gradient(120deg, var(--blue), var(--blue-deep));
+    color: #fff;
+    padding: 72px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-band::before,
+.cta-band::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    pointer-events: none;
+}
+
+.cta-band::before {
+    top: -50%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+}
+
+.cta-band::after {
+    bottom: -60%;
+    right: -10%;
+    width: 460px;
+    height: 460px;
+}
+
+.cta-band h2 {
+    color: #fff;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-band p {
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 52ch;
+    margin: 0 auto 28px;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-band .btn-solid {
+    background: #fff;
+    color: var(--blue);
+    position: relative;
+    z-index: 1;
+}
+
+.cta-band .btn-solid:hover {
+    background: var(--blue-soft);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 1100px) {
+    .course-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .highlight-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 960px) {
+    .page-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .page-hero-art {
+        max-width: 360px;
+    }
+
+    .course-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .page-hero {
+        padding: 72px 0 56px;
+    }
+
+    .page-hero-art {
+        max-width: 280px;
+    }
+
+    .course-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .highlight-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .course-grid-wrap {
+        padding: 24px 0 72px;
+    }
+
+    .highlights {
+        padding: 64px 0;
+    }
+
+    .cta-band {
+        padding: 56px 0;
+    }
+
+    .course-card h3 {
+        min-height: auto;
+    }
+
+    .course-filters-wrap {
+        padding: 32px 0 8px;
+    }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+
+    .page-hero::before,
+    .art-glow,
+    .path-line,
+    .ring,
+    .mile,
+    .orbit-group,
+    .course-card,
+    .highlight-card,
+    .highlight-icon {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .ring {
+        opacity: 0.35;
+        transform: scale(1.6);
+    }
+}

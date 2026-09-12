@@ -1,0 +1,699 @@
+/* =========================================================
+   CONTACT PAGE — page-specific styles
+   ========================================================= */
+
+/* ---------- PAGE HERO with art ---------- */
+.page-hero {
+  padding: 96px 0 72px;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(160deg, var(--paper-soft) 0%, var(--paper) 60%);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -8%;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--blue-soft) 0%, transparent 70%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.page-hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.page-hero-copy .eyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--blue);
+  font-weight: 600;
+  margin-bottom: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.page-hero-copy h1 {
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  max-width: 22ch;
+  margin-bottom: 18px;
+  letter-spacing: -0.02em;
+}
+
+.page-hero-copy p {
+  max-width: 58ch;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+/* ---------- ANIMATED ILLUSTRATION ---------- */
+.page-hero-art {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  isolation: isolate;
+}
+
+.art-glow {
+  position: absolute;
+  inset: 12%;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--blue-soft) 0%, transparent 68%);
+  opacity: 0.85;
+  z-index: 0;
+  animation: glowPulse 5s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+}
+
+.art-svg {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+/* Pulsing rings */
+.ring {
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 1.6;
+  opacity: 0;
+  transform-origin: 200px 200px;
+  animation: ringPulse 4.5s ease-out infinite;
+}
+
+.ring-2 {
+  animation-delay: 1.5s;
+}
+
+.ring-3 {
+  animation-delay: 3s;
+}
+
+@keyframes ringPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+
+  70% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+/* Orbit paths */
+.orbit-path {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 1.2;
+  stroke-dasharray: 4 6;
+  transform-origin: 200px 200px;
+  animation: spin 40s linear infinite;
+}
+
+.orbit-path-2 {
+  stroke: var(--blue-soft);
+  animation: spin 26s linear infinite reverse;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Orbiting nodes */
+.orbit-group {
+  transform-origin: 200px 200px;
+  animation: spin 18s linear infinite;
+}
+
+.orbit-2 {
+  animation-duration: 24s;
+  animation-direction: reverse;
+}
+
+.orbit-3 {
+  animation-duration: 14s;
+}
+
+.node {
+  fill: var(--blue);
+  filter: drop-shadow(0 0 8px var(--blue-glow));
+}
+
+.node-2 {
+  fill: var(--blue-mid);
+}
+
+.node-3 {
+  fill: var(--blue-deep);
+}
+
+/* Outer arc */
+.arc {
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 1.4;
+  stroke-dasharray: 2 10;
+  opacity: 0.55;
+  transform-origin: 200px 200px;
+  animation: spin 60s linear infinite reverse;
+}
+
+/* Centre core */
+.core {
+  fill: var(--blue);
+  filter: drop-shadow(0 6px 18px var(--blue-glow));
+  animation: coreBeat 3.6s ease-in-out infinite;
+  transform-origin: 200px 200px;
+}
+
+@keyframes coreBeat {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+/* Envelope icon — subtle nod animation */
+.envelope {
+  transform-origin: 200px 200px;
+  animation: envelopeNod 3.6s ease-in-out infinite;
+}
+
+@keyframes envelopeNod {
+
+  0%,
+  100% {
+    transform: translate(200px, 200px) rotate(0deg);
+  }
+
+  50% {
+    transform: translate(200px, 198px) rotate(-4deg);
+  }
+}
+
+/* Floating chips */
+.chip {
+  position: absolute;
+  z-index: 3;
+  padding: 6px 12px;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  color: var(--blue);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+  animation: chipFloat 6s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+.chip-1 {
+  top: 6%;
+  left: 2%;
+  animation-delay: 0s;
+}
+
+.chip-2 {
+  top: 24%;
+  right: -2%;
+  animation-delay: 1s;
+}
+
+.chip-3 {
+  bottom: 22%;
+  left: -2%;
+  animation-delay: 2s;
+}
+
+.chip-4 {
+  bottom: 6%;
+  right: 4%;
+  animation-delay: 3s;
+}
+
+.chip-5 {
+  top: 50%;
+  left: -6%;
+  animation-delay: 4s;
+}
+
+.chip-6 {
+  top: 50%;
+  right: -6%;
+  animation-delay: 5s;
+}
+
+@keyframes chipFloat {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.85;
+  }
+
+  50% {
+    transform: translateY(-8px) scale(1.05);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .page-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .page-hero-art {
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-hero {
+    padding: 72px 0 56px;
+  }
+
+  .page-hero-art {
+    max-width: 280px;
+  }
+
+  .chip {
+    font-size: 0.6rem;
+    padding: 5px 10px;
+  }
+}
+
+/* =========================================================
+   CONTACT LAYOUT
+   ========================================================= */
+.contact {
+  padding: 96px 0 104px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+/* ---------- LEFT ---------- */
+.contact-copy h2 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.contact-copy h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 3px;
+  margin-top: 12px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--blue-mid));
+}
+
+.contact-copy>p {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  margin-bottom: 28px;
+  max-width: 56ch;
+}
+
+.branch-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.branch-card {
+  padding: 24px 26px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--paper);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.branch-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: var(--blue);
+}
+
+.branch-card--highlight {
+  border-color: var(--blue);
+  background: linear-gradient(135deg, var(--paper-soft) 0%, var(--paper) 100%);
+}
+
+.branch-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+.branch-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 0 4px var(--blue-soft);
+  animation: dotPulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes dotPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 4px var(--blue-soft);
+  }
+
+  50% {
+    box-shadow: 0 0 0 9px rgba(26, 110, 245, 0.12);
+  }
+}
+
+.contact-details {
+  display: grid;
+  gap: 14px;
+}
+
+.contact-details li {
+  font-size: 0.94rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.contact-details li strong {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.contact-details li a.text-link {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.contact-details li a.text-link:hover {
+  border-bottom-color: var(--blue);
+}
+
+.map-box {
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  line-height: 0;
+  box-shadow: var(--shadow);
+}
+
+.map-box iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: var(--radius);
+}
+
+/* ---------- FORM ---------- */
+.contact-form {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 40px 36px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--blue), var(--blue-mid));
+}
+
+/* Form header with icon */
+.form-head {
+  margin-bottom: 28px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.form-head-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: var(--blue-soft);
+  color: var(--blue);
+  margin-bottom: 14px;
+  transition: transform 0.3s ease;
+}
+
+.form-head-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.contact-form:hover .form-head-icon {
+  transform: scale(1.08) rotate(-5deg);
+}
+
+.form-head h3 {
+  font-size: 1.35rem;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.form-head p {
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.field {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.field label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 8px;
+  letter-spacing: 0.01em;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius);
+  font-family: 'Inter', var(--font-body);
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: var(--paper);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--muted);
+  opacity: 0.7;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px var(--blue-soft);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+/* Error state */
+.field.has-error input,
+.field.has-error select,
+.field.has-error textarea {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.03);
+}
+
+.field-error {
+  display: block;
+  font-size: 0.82rem;
+  color: #ef4444;
+  min-height: 1.1em;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+/* Submit button */
+.contact-form .btn-block {
+  width: 100%;
+  text-align: center;
+  padding: 14px 24px;
+  font-size: 1rem;
+  margin-top: 4px;
+  transition: transform 0.15s ease, background 0.25s ease, box-shadow 0.2s ease;
+}
+
+.contact-form .btn-block:disabled {
+  cursor: not-allowed;
+  opacity: 0.9;
+  transform: none;
+}
+
+/* Status note */
+.form-note {
+  margin-top: 14px;
+  font-size: 0.92rem;
+  min-height: 1.3em;
+  text-align: center;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.form-note.is-success {
+  color: #10b981;
+}
+
+.form-note.is-error {
+  color: #ef4444;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 960px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact {
+    padding: 72px 0 88px;
+  }
+
+  .contact-form {
+    padding: 32px 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-hero {
+    padding: 72px 0 48px;
+  }
+
+  .contact {
+    padding: 56px 0 72px;
+  }
+
+  .branch-card {
+    padding: 20px 22px;
+  }
+
+  .contact-form {
+    padding: 28px 22px;
+  }
+
+  .form-head h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero-copy h1 {
+    font-size: 1.8rem;
+  }
+
+  .contact-copy h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ---------- REDUCED MOTION ---------- */
+@media (prefers-reduced-motion: reduce) {
+
+  .ring,
+  .orbit-path,
+  .orbit-group,
+  .arc,
+  .core,
+  .envelope,
+  .chip,
+  .art-glow,
+  .branch-dot {
+    animation: none !important;
+  }
+
+  .ring {
+    opacity: 0.35;
+    transform: scale(1.6);
+  }
+}

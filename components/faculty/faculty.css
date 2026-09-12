@@ -1,0 +1,1040 @@
+/* =========================================================
+   FACULTY PAGE — page-specific styles
+   Shared tokens, nav, buttons, footer come from index.css
+   ========================================================= */
+
+/* =========================================================
+   PAGE HERO with animated mentor illustration
+   ========================================================= */
+.page-hero {
+  padding: 96px 0 72px;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(160deg, var(--paper-soft) 0%, var(--paper) 60%);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -8%;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--blue-soft) 0%, transparent 70%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.page-hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.page-hero-copy .eyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--blue);
+  font-weight: 600;
+  margin-bottom: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.page-hero-copy h1 {
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  max-width: 22ch;
+  margin-bottom: 18px;
+  letter-spacing: -0.02em;
+}
+
+.page-hero-copy p {
+  max-width: 58ch;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+/* ---------- Art container ---------- */
+.page-hero-art {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  isolation: isolate;
+}
+
+.art-glow {
+  position: absolute;
+  inset: 12%;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--blue-soft) 0%, transparent 68%);
+  opacity: 0.85;
+  z-index: 0;
+  animation: glowPulse 5s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+}
+
+.art-svg {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+/* ---------- Pulse rings from mentor ---------- */
+.ring {
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 1.6;
+  opacity: 0;
+  transform-origin: 200px 200px;
+  animation: ringPulse 4.5s ease-out infinite;
+}
+
+.ring-2 {
+  animation-delay: 1.5s;
+}
+
+.ring-3 {
+  animation-delay: 3s;
+}
+
+@keyframes ringPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+
+  70% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+/* ---------- Orbit ring path ---------- */
+.orbit-path {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 1.2;
+  stroke-dasharray: 4 8;
+  transform-origin: 200px 200px;
+  animation: spin 45s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- Connection lines (mentor → learners) ---------- */
+.conn {
+  stroke: var(--blue);
+  stroke-width: 1.2;
+  stroke-dasharray: 4 5;
+  opacity: 0.35;
+  animation: dashFlow 4s linear infinite;
+}
+
+.conn-1 {
+  animation-delay: 0s;
+}
+
+.conn-2 {
+  animation-delay: 0.4s;
+}
+
+.conn-3 {
+  animation-delay: 0.8s;
+}
+
+.conn-4 {
+  animation-delay: 1.2s;
+}
+
+.conn-5 {
+  animation-delay: 1.6s;
+}
+
+.conn-6 {
+  animation-delay: 2.0s;
+}
+
+@keyframes dashFlow {
+  to {
+    stroke-dashoffset: -18;
+  }
+}
+
+/* ---------- Learner nodes ---------- */
+.learner-node {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: learnerBreathe 3.6s ease-in-out infinite;
+}
+
+.learner-1 {
+  animation-delay: 0s;
+}
+
+.learner-2 {
+  animation-delay: 0.6s;
+}
+
+.learner-3 {
+  animation-delay: 1.2s;
+}
+
+.learner-4 {
+  animation-delay: 1.8s;
+}
+
+.learner-5 {
+  animation-delay: 2.4s;
+}
+
+.learner-6 {
+  animation-delay: 3.0s;
+}
+
+@keyframes learnerBreathe {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+.learner-bg {
+  fill: var(--blue);
+  filter: drop-shadow(0 4px 10px var(--blue-glow));
+}
+
+.learner-bg-2 {
+  fill: var(--blue-mid);
+}
+
+.learner-bg-3 {
+  fill: var(--blue-deep);
+}
+
+.learner-bg-4 {
+  fill: var(--blue-mid);
+}
+
+.learner-glyph {
+  fill: #fff;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  dominant-baseline: middle;
+}
+
+/* ---------- Central mentor node ---------- */
+.mentor {
+  transform-origin: 200px 200px;
+  animation: mentorFloat 4s ease-in-out infinite;
+}
+
+@keyframes mentorFloat {
+
+  0%,
+  100% {
+    transform: translate(200px, 200px) translateY(0);
+  }
+
+  50% {
+    transform: translate(200px, 200px) translateY(-6px);
+  }
+}
+
+.mentor-halo {
+  fill: var(--blue-soft);
+  opacity: 0.6;
+  animation: haloPulse 4s ease-in-out infinite;
+  transform-origin: 200px 200px;
+}
+
+@keyframes haloPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+
+  50% {
+    transform: scale(1.12);
+    opacity: 0.85;
+  }
+}
+
+.mentor-core {
+  fill: var(--blue);
+  filter: drop-shadow(0 8px 22px var(--blue-glow));
+  animation: coreBeat 3.6s ease-in-out infinite;
+  transform-origin: 200px 200px;
+}
+
+@keyframes coreBeat {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.mentor-icon {
+  transform-origin: 200px 200px;
+}
+
+/* ---------- Floating chips ---------- */
+.chip {
+  position: absolute;
+  z-index: 3;
+  padding: 6px 12px;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  color: var(--blue);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+  animation: chipFloat 6s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+.chip-1 {
+  top: 6%;
+  left: 2%;
+  animation-delay: 0s;
+}
+
+.chip-2 {
+  top: 24%;
+  right: -2%;
+  animation-delay: 1s;
+}
+
+.chip-3 {
+  bottom: 22%;
+  left: -2%;
+  animation-delay: 2s;
+}
+
+.chip-4 {
+  bottom: 6%;
+  right: 4%;
+  animation-delay: 3s;
+}
+
+.chip-5 {
+  top: 50%;
+  left: -6%;
+  animation-delay: 4s;
+}
+
+.chip-6 {
+  top: 50%;
+  right: -6%;
+  animation-delay: 5s;
+}
+
+@keyframes chipFloat {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.85;
+  }
+
+  50% {
+    transform: translateY(-8px) scale(1.05);
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   FACULTY SECTION
+   ========================================================= */
+.faculty-section {
+  padding: 88px 0 104px;
+}
+
+.section-head {
+  margin-bottom: 44px;
+  max-width: 56ch;
+}
+
+.section-head h2 {
+  position: relative;
+  display: inline-block;
+}
+
+.section-head h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 3px;
+  margin-top: 10px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--blue-mid));
+}
+
+.section-head p {
+  margin-top: 12px;
+  font-size: 1rem;
+}
+
+/* ---------- Faculty grid ---------- */
+.faculty-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+}
+
+.faculty-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 28px 24px 26px;
+  text-align: left;
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.faculty-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--blue-mid));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.faculty-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--blue);
+}
+
+.faculty-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Photo circle with initials */
+.faculty-photo {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  background: linear-gradient(145deg, var(--blue), var(--blue-deep));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  border: 3px solid var(--paper);
+  box-shadow: 0 8px 22px var(--blue-glow);
+  position: relative;
+  transition: transform 0.35s ease;
+}
+
+.faculty-photo::after {
+  content: attr(data-initials);
+  position: relative;
+  z-index: 1;
+}
+
+.faculty-card:hover .faculty-photo {
+  transform: scale(1.06) rotate(-3deg);
+}
+
+.faculty-card h3 {
+  font-size: 1.08rem;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+
+.faculty-role {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--blue);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.faculty-card p {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 1100px) {
+  .faculty-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 960px) {
+  .page-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .page-hero-art {
+    max-width: 340px;
+  }
+
+  .faculty-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .faculty-section {
+    padding: 72px 0 88px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-hero {
+    padding: 72px 0 56px;
+  }
+
+  .page-hero-art {
+    max-width: 280px;
+  }
+
+  .chip {
+    font-size: 0.6rem;
+    padding: 5px 10px;
+  }
+
+  .faculty-section {
+    padding: 56px 0 72px;
+  }
+
+  .faculty-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .faculty-photo {
+    width: 84px;
+    height: 84px;
+    font-size: 1.4rem;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+
+  .ring,
+  .orbit-path,
+  .conn,
+  .learner-node,
+  .mentor,
+  .mentor-halo,
+  .mentor-core,
+  .chip,
+  .art-glow,
+  .faculty-card,
+  .faculty-photo {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .ring {
+    opacity: 0.35;
+    transform: scale(1.6);
+  }
+}
+
+/* =========================================================
+   PAGE HERO — animated photo stack
+   ========================================================= */
+.page-hero {
+  padding: 96px 0 88px;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(160deg, var(--paper-soft) 0%, var(--paper) 60%);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -8%;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--blue-soft) 0%, transparent 70%);
+  opacity: 0.6;
+  pointer-events: none;
+  animation: heroGlow 8s ease-in-out infinite;
+}
+
+@keyframes heroGlow {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 0.85;
+  }
+}
+
+.page-hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.page-hero-copy .eyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--blue);
+  font-weight: 600;
+  margin-bottom: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.page-hero-copy h1 {
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  max-width: 22ch;
+  margin-bottom: 18px;
+  letter-spacing: -0.02em;
+}
+
+.page-hero-copy p {
+  max-width: 58ch;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   PHOTO STACK — animated
+   ========================================================= */
+.page-hero-photos {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  height: 380px;
+  margin: 0 auto;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  isolation: isolate;
+}
+
+/* Soft ambient glow behind both cards */
+.page-hero-photos::before {
+  content: "";
+  position: absolute;
+  inset: 6% 4%;
+  border-radius: 40px;
+  background: radial-gradient(circle at 60% 40%, var(--blue-soft) 0%, transparent 65%);
+  opacity: 0.6;
+  filter: blur(24px);
+  z-index: 0;
+  animation: ambientPulse 6s ease-in-out infinite;
+}
+
+@keyframes ambientPulse {
+
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.85;
+    transform: scale(1.06);
+  }
+}
+
+/* Individual photo cards */
+.photo-card {
+  position: absolute;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--paper);
+  border: 3px solid var(--paper);
+  box-shadow: var(--shadow-lg);
+  transition:
+    transform 0.7s cubic-bezier(0.2, 0, 0, 1),
+    box-shadow 0.45s ease,
+    border-color 0.45s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.9s cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Animated sheen that sweeps across on hover */
+.photo-sheen {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.35) 50%,
+      transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.9s cubic-bezier(0.2, 0, 0, 1);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Soft inner blue glow ring on hover */
+.photo-glow {
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 0 rgba(26, 110, 245, 0);
+  transition: box-shadow 0.45s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Base positions */
+.photo-card-back {
+  top: 0;
+  right: 0;
+  width: 58%;
+  aspect-ratio: 4 / 5;
+  transform: rotate(6deg);
+  z-index: 1;
+}
+
+.photo-card-front {
+  bottom: 0;
+  left: 0;
+  width: 62%;
+  aspect-ratio: 4 / 5;
+  transform: rotate(-5deg);
+  z-index: 3;
+}
+
+/* Individual idle breathing so they never feel static */
+.photo-card-back {
+  animation: floatBack 6s ease-in-out infinite;
+}
+
+.photo-card-front {
+  animation: floatFront 6s ease-in-out infinite;
+}
+
+@keyframes floatBack {
+
+  0%,
+  100% {
+    transform: rotate(6deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(6deg) translateY(-6px);
+  }
+}
+
+@keyframes floatFront {
+
+  0%,
+  100% {
+    transform: rotate(-5deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(-5deg) translateY(-8px);
+  }
+}
+
+/* ---------- HOVER: the whole stack responds ---------- */
+.page-hero-photos:hover .photo-card-back {
+  animation: none;
+  transform: rotate(9deg) translate(-6px, -14px) scale(1.04);
+  box-shadow: 0 30px 60px -20px rgba(10, 37, 64, 0.25);
+}
+
+.page-hero-photos:hover .photo-card-front {
+  animation: none;
+  transform: rotate(-8deg) translate(6px, -16px) scale(1.05);
+  box-shadow: 0 40px 70px -22px rgba(10, 37, 64, 0.30);
+}
+
+.page-hero-photos:hover .photo-card img {
+  transform: scale(1.08);
+}
+
+.page-hero-photos:hover .photo-sheen {
+  transform: translateX(120%);
+}
+
+.page-hero-photos:hover .photo-glow {
+  box-shadow: inset 0 0 0 3px rgba(26, 110, 245, 0.35);
+}
+
+/* Focus accessibility */
+.page-hero-photos:focus-within .photo-card-back,
+.page-hero-photos:focus-within .photo-card-front {
+  animation: none;
+}
+
+/* ---------- JS-driven 3D tilt (applied via transform vars) ---------- */
+.page-hero-photos.is-tilting .photo-card {
+  animation: none;
+}
+
+.page-hero-photos.is-tilting .photo-card-back {
+  transform:
+    rotate(calc(9deg + var(--tilt-x, 0deg))) translate(-6px, -14px) scale(1.04) rotateY(var(--tilt-y, 0deg));
+}
+
+.page-hero-photos.is-tilting .photo-card-front {
+  transform:
+    rotate(calc(-8deg + var(--tilt-x, 0deg))) translate(6px, -16px) scale(1.05) rotateY(var(--tilt-y, 0deg));
+}
+
+/* ---------- Floating chips ---------- */
+.photo-chip {
+  position: absolute;
+  z-index: 5;
+  padding: 7px 14px;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--blue);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+  animation: chipFloat 6s ease-in-out infinite;
+  white-space: nowrap;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.photo-chip-1 {
+  top: 4%;
+  left: -2%;
+  animation-delay: 0s;
+}
+
+.photo-chip-2 {
+  bottom: 8%;
+  right: -4%;
+  animation-delay: 2s;
+}
+
+.photo-chip-3 {
+  top: 46%;
+  right: -8%;
+  animation-delay: 4s;
+}
+
+@keyframes chipFloat {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.9;
+  }
+
+  50% {
+    transform: translateY(-10px) scale(1.06);
+    opacity: 1;
+  }
+}
+
+.page-hero-photos:hover .photo-chip-1 {
+  transform: translateY(-6px) scale(1.08);
+  box-shadow: var(--shadow-lg);
+}
+
+.page-hero-photos:hover .photo-chip-2 {
+  transform: translateY(-8px) scale(1.08);
+  box-shadow: var(--shadow-lg);
+}
+
+.page-hero-photos:hover .photo-chip-3 {
+  transform: translateY(-6px) scale(1.08);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .page-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .page-hero-photos {
+    max-width: 400px;
+    height: 320px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-hero {
+    padding: 72px 0 64px;
+  }
+
+  .page-hero-photos {
+    max-width: 320px;
+    height: 260px;
+  }
+
+  .photo-card-back {
+    width: 60%;
+  }
+
+  .photo-card-front {
+    width: 64%;
+  }
+
+  .photo-chip {
+    font-size: 0.62rem;
+    padding: 5px 11px;
+  }
+
+  .photo-chip-1 {
+    left: -4%;
+  }
+
+  .photo-chip-2 {
+    right: -6%;
+  }
+
+  .photo-chip-3 {
+    right: -10%;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+
+  .page-hero::before,
+  .page-hero-photos::before,
+  .photo-card-back,
+  .photo-card-front,
+  .photo-chip {
+    animation: none !important;
+  }
+
+  .photo-card,
+  .photo-card img,
+  .photo-sheen,
+  .photo-glow,
+  .photo-chip {
+    transition: none !important;
+  }
+}
+
+/* =========================================================
+   FACULTY CARD — education & experience block
+   ========================================================= */
+.faculty-meta {
+  list-style: none;
+  margin: 14px 0 14px;
+  padding: 14px 0 0;
+  border-top: 1px dashed var(--line);
+  display: grid;
+  gap: 10px;
+}
+
+.faculty-meta li {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--muted);
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  gap: 8px;
+  align-items: start;
+}
+
+.faculty-meta li span {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding-top: 2px;
+}
+
+/* Long bios wrap cleanly on mobile */
+@media (max-width: 640px) {
+  .faculty-meta li {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .faculty-meta li span {
+    padding-top: 0;
+  }
+}

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arjun Toppo — Student Portfolio · Anudip Foundation</title>
+    <meta name="description"
+        content="Arjun Toppo — AI Academy graduate from Anudip Foundation. AI Resume Reviewer capstone project.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../index.css">
+    <link rel="stylesheet" href="student-profile.css">
+
+</head>
+
+<body class="profile-page">
+
+
+    <!-- Header injected by script.js -->
+    <div id="header"></div>
+
+    <main id="main">
+
+        <div class="wrap">
+            <a href="students.html" class="back-link">
+                <span aria-hidden="true">←</span> Back to all student projects
+            </a>
+        </div>
+
+        <!-- ========== PROFILE HERO ========== -->
+        <section class="profile-hero">
+            <div class="wrap profile-hero-grid">
+
+                <div class="profile-photo">
+                    <img src="images/arjun.png" alt="Arjun Toppo">
+                    <span class="profile-badge">AI Academy</span>
+                </div>
+
+                <div class="profile-intro">
+                    <p class="eyebrow">Student Portfolio</p>
+                    <h1>Arjun Toppo</h1>
+                    <p class="profile-role">AI Tools Developer · Python &amp; LLM Enthusiast · Anudip AI Academy
+                        Graduate</p>
+                    <p class="profile-summary">
+                        I joined the AI Academy with zero coding background. Nine months later I'd built a resume
+                        reviewer that uses an LLM, and it's helped over 100 Anudip learners prepare for interviews.
+                    </p>
+
+                    <div class="profile-actions">
+                        <a href="#projects" class="btn btn-solid">View project</a>
+                        <a href="mailto:arjun.toppo@example.com" class="btn btn-outline">✉ Email</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========== PROFILE BODY ========== -->
+        <section class="profile-body">
+            <div class="wrap profile-body-grid">
+
+                <!-- LEFT: contact, education, skills, languages -->
+                <aside class="profile-side">
+
+                    <div class="profile-block">
+                        <h3>Contact</h3>
+                        <ul class="profile-contact">
+                            <li><span>Phone</span><a href="tel:+919876543213">+91 98765 43213</a></li>
+                            <li><span>Email</span><a href="mailto:arjun.toppo@example.com">arjun.toppo@example.com</a>
+                            </li>
+                            <li><span>City</span>Ranchi, Jharkhand</li>
+                            <li><span>GitHub</span><a href="#">github.com/arjuntoppo</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="profile-block">
+                        <h3>Education</h3>
+                        <ul class="profile-timeline">
+                            <li>
+                                <span class="timeline-year">2024 – 2025</span>
+                                <strong>AI Academy — Applied AI</strong>
+                                <p>Anudip Foundation · Kolkata Centre</p>
+                            </li>
+                            <li>
+                                <span class="timeline-year">2019 – 2022</span>
+                                <strong>B.A. English Literature</strong>
+                                <p>Ranchi University, Jharkhand</p>
+                            </li>
+                            <li>
+                                <span class="timeline-year">2019</span>
+                                <strong>Higher Secondary (Arts)</strong>
+                                <p>St. Xavier's College, Ranchi</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="profile-block">
+                        <h3>Skills</h3>
+                        <div class="skill-tags">
+                            <span>Python</span><span>OpenAI API</span><span>Prompt Engineering</span>
+                            <span>Streamlit</span><span>Git</span><span>Technical Writing</span>
+                        </div>
+                    </div>
+
+                    <div class="profile-block">
+                        <h3>Languages</h3>
+                        <ul class="profile-contact">
+                            <li><span>Kurukh</span>Native</li>
+                            <li><span>Hindi</span>Fluent</li>
+                            <li><span>English</span>Professional</li>
+                        </ul>
+                    </div>
+
+                </aside>
+
+                <!-- RIGHT: project, experience, certifications -->
+                <div class="profile-main">
+
+                    <div class="profile-block" id="projects">
+                        <h3>Featured Project</h3>
+                        <article class="project-feature">
+                            <div class="project-feature-head">
+                                <span class="thumb-tag">AI Capstone</span>
+                                <h4>AI Resume Reviewer</h4>
+                                <p class="project-meta">2025 · Individual project · 4 weeks</p>
+                            </div>
+                            <p>
+                                A small AI-assisted tool that reviews a resume against a job description and suggests
+                                edits,
+                                built during the AI Academy track. Powered by the OpenAI API and packaged as a Streamlit
+                                app.
+                            </p>
+                            <ul class="project-bullets">
+                                <li>Uploads a PDF resume and pastes a job description</li>
+                                <li>Returns a keyword-mismatch report and rewrite suggestions</li>
+                                <li>Every suggestion comes with a "why" — teaching rather than replacing the writer</li>
+                                <li>Used by 100+ Anudip learners during placement season</li>
+                            </ul>
+                            <div class="portfolio-stack">
+                                <span>Python</span><span>OpenAI API</span><span>Streamlit</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="profile-block">
+                        <h3>Experience</h3>
+                        <ul class="profile-timeline">
+                            <li>
+                                <span class="timeline-year">2025 – Present</span>
+                                <strong>AI Tools Developer (Freelance)</strong>
+                                <p>Self-employed · Remote</p>
+                                <p class="timeline-note">Build small LLM-powered tools for NGOs and coaching institutes
+                                    — resume reviewers, document summarisers, FAQ chatbots. Currently working with three
+                                    repeat clients.</p>
+                            </li>
+                            <li>
+                                <span class="timeline-year">2024 – 2025</span>
+                                <strong>Peer Mentor — AI Academy</strong>
+                                <p>Anudip Foundation · Kolkata Centre</p>
+                                <p class="timeline-note">Supported newer cohorts with Python fundamentals and prompt
+                                    engineering sessions. Ran weekly office hours for the first three batches.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="profile-block">
+                        <h3>Certifications</h3>
+                        <ul class="profile-timeline">
+                            <li>
+                                <span class="timeline-year">2025</span>
+                                <strong>Applied AI — Anudip AI Academy</strong>
+                                <p>Anudip Foundation</p>
+                            </li>
+                            <li>
+                                <span class="timeline-year">2024</span>
+                                <strong>OpenAI API Fundamentals</strong>
+                                <p>DeepLearning.AI</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer injected by script.js -->
+    <div id="footer"></div>
+
+    <script src="student-profile.js"></script>
+    <script src="../../script.js?v=3"></script>
+    <script src="../../config.js?v=3"></script>
+    <script src="../../chatbot.js?v=3"></script>
+
+
+</body>
+
+</html>

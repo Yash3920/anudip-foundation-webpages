@@ -1,0 +1,681 @@
+/* =========================================================
+   STUDENT PORTFOLIO — page-specific styles
+   Shared tokens, nav, buttons, footer come from index.css
+   ========================================================= */
+
+/* =========================================================
+   PAGE HERO with animated project-deploy illustration
+   ========================================================= */
+.page-hero {
+    padding: 96px 0 72px;
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(160deg, var(--paper-soft) 0%, var(--paper) 60%);
+    position: relative;
+    overflow: hidden;
+}
+
+.page-hero::before {
+    content: "";
+    position: absolute;
+    top: -40%;
+    right: -8%;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--blue-soft) 0%, transparent 70%);
+    opacity: 0.6;
+    pointer-events: none;
+    animation: heroGlow 8s ease-in-out infinite;
+}
+
+@keyframes heroGlow {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.55;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 0.85;
+    }
+}
+
+.page-hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 56px;
+    align-items: center;
+}
+
+.page-hero-copy .eyebrow {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--blue);
+    font-weight: 600;
+    margin-bottom: 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.page-hero-copy h1 {
+    font-size: clamp(2rem, 4vw, 2.9rem);
+    max-width: 22ch;
+    margin-bottom: 18px;
+    letter-spacing: -0.02em;
+}
+
+.page-hero-copy p {
+    max-width: 58ch;
+    font-size: 1.08rem;
+    line-height: 1.7;
+}
+
+/* ---------- Art container ---------- */
+.page-hero-art {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    isolation: isolate;
+}
+
+.art-glow {
+    position: absolute;
+    inset: 12%;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--blue-soft) 0%, transparent 68%);
+    opacity: 0.85;
+    z-index: 0;
+    animation: glowPulse 5s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.75;
+    }
+
+    50% {
+        transform: scale(1.12);
+        opacity: 1;
+    }
+}
+
+.art-svg {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: visible;
+}
+
+/* ---------- Pulse rings behind browser ---------- */
+.ring {
+    fill: none;
+    stroke: var(--blue);
+    stroke-width: 1.6;
+    opacity: 0;
+    transform-origin: 200px 200px;
+    animation: ringPulse 4.5s ease-out infinite;
+}
+
+.ring-2 {
+    animation-delay: 2.2s;
+}
+
+@keyframes ringPulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.55;
+    }
+
+    70% {
+        transform: scale(2.2);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(2.2);
+        opacity: 0;
+    }
+}
+
+/* ---------- Orbit ring path ---------- */
+.orbit-path {
+    fill: none;
+    stroke: var(--line);
+    stroke-width: 1.2;
+    stroke-dasharray: 4 8;
+    transform-origin: 200px 200px;
+    animation: spin 45s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ---------- Orbiting tech icons ---------- */
+.orbit-group {
+    transform-origin: 200px 200px;
+    animation: spin 24s linear infinite;
+}
+
+.orbit-2 {
+    animation-duration: 28s;
+    animation-direction: reverse;
+}
+
+.orbit-3 {
+    animation-duration: 32s;
+}
+
+.orbit-4 {
+    animation-duration: 20s;
+    animation-direction: reverse;
+}
+
+.icon-bg {
+    fill: var(--blue);
+    filter: drop-shadow(0 4px 10px var(--blue-glow));
+}
+
+.icon-bg-2 {
+    fill: var(--blue-mid);
+}
+
+.icon-bg-3 {
+    fill: var(--blue-deep);
+}
+
+.icon-bg-4 {
+    fill: var(--blue);
+}
+
+.icon-glyph {
+    fill: #fff;
+    font-family: var(--font-body);
+    font-size: 10px;
+    font-weight: 700;
+    dominant-baseline: middle;
+}
+
+/* ---------- Browser window mockup ---------- */
+.browser {
+    transform-origin: 200px 200px;
+    animation: browserFloat 4s ease-in-out infinite;
+}
+
+@keyframes browserFloat {
+
+    0%,
+    100% {
+        transform: translate(200px, 200px) translateY(0);
+    }
+
+    50% {
+        transform: translate(200px, 200px) translateY(-6px);
+    }
+}
+
+.br-frame {
+    fill: var(--paper);
+    stroke: var(--line);
+    stroke-width: 1.5;
+    filter: drop-shadow(0 12px 26px rgba(10, 37, 64, 0.15));
+}
+
+.br-bar {
+    fill: var(--blue);
+    filter: drop-shadow(0 4px 10px var(--blue-glow));
+}
+
+.br-dot {
+    fill: rgba(255, 255, 255, 0.75);
+}
+
+/* Rising bars (deploy success chart) */
+.chart {
+    transform-origin: 200px 200px;
+}
+
+.bar {
+    fill: var(--blue);
+    transform-origin: center bottom;
+    animation: barRise 6s ease-in-out infinite;
+}
+
+.bar-1 {
+    animation-delay: 0.0s;
+}
+
+.bar-2 {
+    animation-delay: 0.2s;
+    fill: var(--blue-mid);
+}
+
+.bar-3 {
+    animation-delay: 0.4s;
+}
+
+.bar-4 {
+    animation-delay: 0.6s;
+    fill: var(--blue-mid);
+}
+
+.bar-5 {
+    animation-delay: 0.8s;
+}
+
+.bar-6 {
+    animation-delay: 1.0s;
+    fill: var(--blue-mid);
+}
+
+.bar-7 {
+    animation-delay: 1.2s;
+    fill: var(--blue-deep);
+}
+
+@keyframes barRise {
+
+    0%,
+    10% {
+        height: 0;
+    }
+
+    40%,
+    75% {
+        height: 60px;
+    }
+
+    90%,
+    100% {
+        height: 0;
+    }
+}
+
+/* Success tick badge */
+.tick-badge {
+    transform-origin: 200px 200px;
+    animation: tickPop 6s ease-in-out infinite;
+}
+
+.tick-bg {
+    fill: #10b981;
+    filter: drop-shadow(0 6px 14px rgba(16, 185, 129, 0.45));
+}
+
+.tick-mark {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+@keyframes tickPop {
+
+    0%,
+    55% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+
+    65% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    75%,
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+
+/* ---------- Floating chips ---------- */
+.chip {
+    position: absolute;
+    z-index: 3;
+    padding: 6px 12px;
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    color: var(--blue);
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    box-shadow: var(--shadow);
+    animation: chipFloat 6s ease-in-out infinite;
+    white-space: nowrap;
+}
+
+.chip-1 {
+    top: 6%;
+    left: 2%;
+    animation-delay: 0s;
+}
+
+.chip-2 {
+    top: 24%;
+    right: -2%;
+    animation-delay: 1s;
+}
+
+.chip-3 {
+    bottom: 22%;
+    left: -2%;
+    animation-delay: 2s;
+}
+
+.chip-4 {
+    bottom: 6%;
+    right: 4%;
+    animation-delay: 3s;
+}
+
+.chip-5 {
+    top: 50%;
+    left: -6%;
+    animation-delay: 4s;
+}
+
+.chip-6 {
+    top: 50%;
+    right: -6%;
+    animation-delay: 5s;
+}
+
+@keyframes chipFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.85;
+    }
+
+    50% {
+        transform: translateY(-8px) scale(1.05);
+        opacity: 1;
+    }
+}
+
+/* =========================================================
+   PORTFOLIO SECTION
+   ========================================================= */
+.portfolio-section {
+    padding: 88px 0 104px;
+}
+
+.section-head {
+    margin-bottom: 44px;
+    max-width: 56ch;
+}
+
+.section-head h2 {
+    position: relative;
+    display: inline-block;
+}
+
+.section-head h2::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 3px;
+    margin-top: 10px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--blue), var(--blue-mid));
+}
+
+.section-head p {
+    margin-top: 12px;
+    font-size: 1rem;
+}
+
+/* ---------- Grid ---------- */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+}
+
+/* ---------- Card ---------- */
+.portfolio-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.35s cubic-bezier(0.2, 0, 0, 1),
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+    position: relative;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--blue);
+}
+
+/* ---------- Thumbnail ---------- */
+.portfolio-thumb {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: linear-gradient(160deg, var(--blue-soft), var(--blue-mid));
+}
+
+.portfolio-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+    transition: transform 0.7s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.portfolio-card:hover .portfolio-thumb img {
+    transform: scale(1.08);
+}
+
+.portfolio-thumb::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10, 37, 64, 0.35) 0%, transparent 55%);
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-card:hover .portfolio-thumb::after {
+    opacity: 0.6;
+}
+
+/* Small tag pill on the thumbnail */
+.thumb-tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    padding: 5px 11px;
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--blue);
+    background: var(--paper);
+    border-radius: 999px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover .thumb-tag {
+    transform: translateY(-2px);
+}
+
+/* ---------- Body ---------- */
+.portfolio-body {
+    padding: 22px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.student-name {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+}
+
+.portfolio-body h3 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+}
+
+.portfolio-body p {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: var(--muted);
+    margin-bottom: 18px;
+    flex: 1;
+}
+
+/* Tech stack pills */
+.portfolio-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--line);
+    margin-top: auto;
+}
+
+.portfolio-stack span {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--muted);
+    padding: 4px 10px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--paper-soft);
+    transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.portfolio-card:hover .portfolio-stack span {
+    color: var(--blue);
+    border-color: var(--blue-soft);
+    background: var(--blue-soft);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 1100px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 960px) {
+    .page-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .page-hero-art {
+        max-width: 340px;
+    }
+
+    .portfolio-section {
+        padding: 72px 0 88px;
+    }
+}
+
+@media (max-width: 640px) {
+    .page-hero {
+        padding: 72px 0 56px;
+    }
+
+    .page-hero-art {
+        max-width: 280px;
+    }
+
+    .chip {
+        font-size: 0.6rem;
+        padding: 5px 10px;
+    }
+
+    .portfolio-section {
+        padding: 56px 0 72px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .portfolio-thumb {
+        aspect-ratio: 16 / 9;
+    }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+
+    .page-hero::before,
+    .ring,
+    .orbit-path,
+    .orbit-group,
+    .browser,
+    .bar,
+    .tick-badge,
+    .chip,
+    .art-glow,
+    .portfolio-card,
+    .portfolio-thumb img,
+    .thumb-tag {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .ring {
+        opacity: 0.35;
+        transform: scale(1.6);
+    }
+
+    .bar {
+        height: 60px;
+    }
+
+    .tick-badge {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+a.portfolio-card {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+}

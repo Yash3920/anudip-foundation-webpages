@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses — Anudip Foundation</title>
+    <meta name="description"
+        content="Job-oriented training across technology, digital skills, finance and professional communication — designed with 400+ corporate partners.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../index.css">
+    <link rel="stylesheet" href="courses.css">
+
+</head>
+
+<body>
+
+
+    <!-- Header injected by script.js -->
+    <div id="header"></div>
+
+    <main id="main">
+
+        <!-- ========== PAGE HERO ========== -->
+        <section class="page-hero">
+            <div class="wrap page-hero-grid">
+
+                <div class="page-hero-copy">
+                    <p class="eyebrow">Courses</p>
+                    <h1>Build skills. Build your future.</h1>
+                    <p>Job-oriented training across technology, digital skills, finance and professional communication —
+                        designed with 400+ corporate partners, so cost is never the barrier.</p>
+                </div>
+
+                <div class="page-hero-art" aria-hidden="true">
+                    <div class="art-glow"></div>
+
+                    <svg viewBox="0 0 400 400" class="art-svg" xmlns="http://www.w3.org/2000/svg">
+
+                        <!-- dashed learning path -->
+                        <path class="path-line" d="M 60 340 Q 130 250 200 200 Q 270 150 340 60" fill="none" />
+
+                        <!-- pulse rings around centre -->
+                        <circle class="ring ring-1" cx="200" cy="200" r="70" />
+                        <circle class="ring ring-2" cx="200" cy="200" r="70" />
+
+                        <!-- milestone 1 — LEARN -->
+                        <g class="mile mile-1">
+                            <circle cx="60" cy="340" r="18" class="mile-bg" />
+                            <text x="60" y="346" class="mile-glyph" text-anchor="middle">1</text>
+                        </g>
+
+                        <!-- milestone 2 — BUILD -->
+                        <g class="mile mile-2">
+                            <circle cx="200" cy="200" r="22" class="mile-bg mile-bg-2" />
+                            <text x="200" y="207" class="mile-glyph" text-anchor="middle">2</text>
+                        </g>
+
+                        <!-- milestone 3 — CAREER -->
+                        <g class="mile mile-3">
+                            <circle cx="340" cy="60" r="20" class="mile-bg mile-bg-3" />
+                            <text x="340" y="66" class="mile-glyph" text-anchor="middle">3</text>
+                        </g>
+
+                        <!-- orbiting subject icons -->
+                        <g class="orbit-group orbit-1">
+                            <g transform="translate(200 90)">
+                                <circle r="13" class="icon-bg" />
+                                <text class="icon-glyph" text-anchor="middle" y="4">&lt;/&gt;</text>
+                            </g>
+                        </g>
+
+                        <g class="orbit-group orbit-2">
+                            <g transform="translate(310 200)">
+                                <circle r="13" class="icon-bg icon-bg-2" />
+                                <text class="icon-glyph" text-anchor="middle" y="4">DB</text>
+                            </g>
+                        </g>
+
+                        <g class="orbit-group orbit-3">
+                            <g transform="translate(200 310)">
+                                <circle r="13" class="icon-bg icon-bg-3" />
+                                <text class="icon-glyph" text-anchor="middle" y="4">AI</text>
+                            </g>
+                        </g>
+
+                        <g class="orbit-group orbit-4">
+                            <g transform="translate(90 200)">
+                                <circle r="13" class="icon-bg icon-bg-4" />
+                                <text class="icon-glyph" text-anchor="middle" y="4">₹</text>
+                            </g>
+                        </g>
+
+                    </svg>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========== FILTERS ========== -->
+        <section class="course-filters-wrap">
+            <div class="wrap">
+                <nav class="course-filters" aria-label="Filter courses by category">
+                    <button type="button" class="is-active" data-filter="all">All Courses</button>
+                    <button type="button" data-filter="technology">Technology</button>
+                    <button type="button" data-filter="digital-skills">Digital Skills</button>
+                    <button type="button" data-filter="finance">Finance</button>
+                    <button type="button" data-filter="professional-skills">Professional Skills</button>
+                </nav>
+            </div>
+        </section>
+
+        <!-- ========== COURSE GRID ========== -->
+        <section class="course-grid-wrap">
+            <div class="wrap">
+
+                <div class="course-intro">
+                    <h2>Our programs</h2>
+                    <p>Every course is built around real hiring pathways. Most programs are <strong>free or heavily
+                            subsidised</strong> for eligible learners — supported by corporate CSR partners including
+                        Accenture, Microsoft, Wells Fargo, J.P. Morgan, and the Michael &amp; Susan Dell Foundation.</p>
+                </div>
+
+                <div class="course-grid">
+
+                    <article class="course-card" data-category="technology">
+                        <a href="java-fullstack.html" class="course-link"
+                            aria-label="View details for Java Full-Stack Development"> <span
+                                class="course-tag">Technology</span>
+                            <h3>Java Full-Stack Development</h3>
+                            <p>Build full-stack applications with Java, Spring Boot, REST APIs and front-end
+                                integration.
+                                Designed for graduates seeking software engineering roles.</p>
+                            <div class="course-meta">
+                                <span>480 hours</span><span>Advanced</span>
+                            </div>
+                            <div class="course-fee-row">
+                                <a href="/components/contact/contact.html" class="text-link">Enquire about eligibility
+                                    →</a>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="course-card" data-category="technology">
+                        <a href="python-web.html" class="course-link"
+                            aria-label="View details for Web Programming in Python">
+                            <span class="course-tag">Technology</span>
+                            <h3>Web Programming in Python</h3>
+                            <p>Core Python, data structures, web frameworks and backend fundamentals. Prepares learners
+                                for
+                                junior developer and automation roles.</p>
+                            <div class="course-meta">
+                                <span>360 hours</span><span>Job-oriented</span>
+                            </div>
+                            <div class="course-fee-row">
+                                <a href="/components/contact/contact.html" class="text-link">Enquire about eligibility
+                                    →</a>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="course-card" data-category="technology">
+                        <a href="aws.html" class="course-link" aria-label="View details for Amazon Web Services">
+                            <span class="course-tag">Technology</span>
+                            <h3>Amazon Web Services</h3>
+                            <p>Cloud computing fundamentals, AWS core services, deployment and monitoring. For learners
+                                targeting cloud support and DevOps entry roles.</p>
+                            <div class="course-meta">
+                                <span>300 hours</span><span>Cloud skills</span>
+                            </div>
+                            <div class="course-fee-row">
+                                <a href="/components/contact/contact.html" class="text-link">Enquire about eligibility
+                                    →</a>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="course-card" data-category="technology">
+                        <a href="data-analytics.html" class="course-link" aria-label="View details for Data Analytics">
+                            <span class="course-tag">Technology</span>
+                            <h3>Data Analytics</h3>
+                            <p>SQL, Excel, Power BI and Python for data analysis. Prepares learners for data analyst and
+                                business intelligence roles.</p>
+                            <div class="course-meta">
+                                <span>360 hours</span><span>Data skills</span>
+                            </div>
+                            <div class="course-fee-row">
+                                <a href="/components/contact/contact.html" class="text-link">Enquire about eligibility
+                                    →</a>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="course-card" data-category="digital-skills">
+                        <a href="digital-marketing.html" class="course-link"
+                            aria-label="View details for Digital Marketing">
+                            <span class="course-tag">Digital Skills</span>
+                            <h3>Digital Marketing</h3>
+                            <p>SEO, social media marketing, content strategy and analytics. For learners entering
+                                digital
+                                marketing and e-commerce roles.</p>
+                            <div class="course-meta">
+                                <span>240 hours</span><span>Job-oriented</span>
+                            </div>
+                            <div class="course-fee-row">
+                                <a href="/components/contact/contact.html" class="text-link">Enquire about eligibility
+                                    →</a>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="course-card" data-category="digital-skills">
+                        <a href="graphic-design.html" class="course-link" aria-label="View details for Graphic Design">
+                            <span class="course-tag">Digital Skills</span>
+                            <h3>Graphic Design</h3>
+                            <p>Design fundamentals, typography, colour theory and tools like Figma and Adobe suite. For
+                                creative and design support roles.</p>
+                            <div class="course-meta">
+                                <span>240 hours</span><span>Creative skills</span>
+                            </div>
+                            <div class="course-fee-row">
+                                <a href="/components/contact/contact.html" class="text-link">Enquire about eligibility
+                                    →</a>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="course-card" data-category="finance">
+                        <a href="tally.html" class="course-link"
+                            aria-label="View details for Accounting with Tally Prime">
+                            <span class="course-tag">Finance</span>
+                            <h3>Accounting with Tally Prime</h3>
+                            <p>Accounting principles, Tally Prime, GST basics and financial reporting. For entry-level
+                                accounts and finance roles.</p>
+                            <div class="course-meta">
+                                <span>240 hours</span><span>BFSI-focused</span>
+                            </div>
+                            <div class="course-fee-row">
+                                <a href="/components/contact /contact.html" class="text-link">Enquire about eligibility
+                                    →</a>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="course-card" data-category="professional-skills">
+                        <a href="english-it.html" class="course-link"
+                            aria-label="View details for English Communication & IT">
+                            <span class="course-tag">Professional Skills</span>
+                            <h3>English Communication &amp; IT</h3>
+                            <p>Spoken English, workplace communication, MS Office and IT fundamentals. For first-time
+                                job
+                                seekers and career switchers.</p>
+                            <div class="course-meta">
+                                <span>180 hours</span><span>Foundational</span>
+                            </div>
+                            <div class="course-fee-row">
+                                <a href="/components/contact/contact.html" class="text-link">Enquire about eligibility
+                                    →</a>
+                            </div>
+                        </a>
+                    </article>
+
+                </div>
+
+                <p class="course-empty" hidden>No courses in this category yet.</p>
+
+            </div>
+        </section>
+
+        <!-- ========== WHY ANUDIP ========== -->
+        <section class="highlights" id="why-anudip">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2>Why choose Anudip?</h2>
+                    <p>More than training — a full runway from first class to first paycheck.</p>
+                </div>
+                <div class="highlight-grid">
+                    <article class="highlight-card">
+                        <div class="highlight-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 3h18v18H3z" />
+                                <path d="M3 9h18" />
+                                <path d="M9 21V9" />
+                            </svg>
+                        </div>
+                        <h3>Industry relevant</h3>
+                        <p>Curriculum co-designed with 400+ corporate partners — including Accenture, Infosys, and Tech
+                            Mahindra.</p>
+                    </article>
+
+                    <article class="highlight-card">
+                        <div class="highlight-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6" />
+                                <polyline points="8 6 2 12 8 18" />
+                            </svg>
+                        </div>
+                        <h3>Practical learning</h3>
+                        <p>Project-first approach with blended learning, AI-assisted tools, and third-party assessments.
+                        </p>
+                    </article>
+
+                    <article class="highlight-card">
+                        <div class="highlight-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2v6" />
+                                <path d="M12 22v-6" />
+                                <path d="M4.93 4.93l4.24 4.24" />
+                                <path d="M14.83 14.83l4.24 4.24" />
+                                <path d="M2 12h6" />
+                                <path d="M22 12h-6" />
+                                <path d="M4.93 19.07l4.24-4.24" />
+                                <path d="M14.83 9.17l4.24-4.24" />
+                            </svg>
+                        </div>
+                        <h3>Career guidance</h3>
+                        <p>Mock interviews, resume clinics, and workplace readiness modules for first-generation
+                            learners.</p>
+                    </article>
+
+                    <article class="highlight-card">
+                        <div class="highlight-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                        </div>
+                        <h3>70% placement rate</h3>
+                        <p>7 in 10 graduates secure jobs with our 400+ employer network across IT, BFSI, and digital
+                            services.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CTA ========== -->
+        <section class="cta-band">
+            <div class="wrap">
+                <h2>Ready to build your career?</h2>
+                <p>Choose the right course, develop your skills, and take the next step forward.</p>
+                <a href="/components/contact/contact.html" class="cd-cta">Enquire about eligibility</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer injected by script.js -->
+    <div id="footer"></div>
+
+    <script src="courses.js"></script>
+    <script src="../../script.js?v=3"></script>
+    <script src="../../config.js?v=3"></script>
+    <script src="../../chatbot.js?v=3"></script>
+
+</body>
+
+</html>

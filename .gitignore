@@ -1,0 +1,10 @@
+# === Secrets — never commit these ===
+.env
+config.js
+
+# === OS & editor junk ===
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+*.swp
