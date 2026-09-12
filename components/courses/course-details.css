@@ -1,0 +1,498 @@
+/* =========================================================
+   COURSE DETAIL PAGE — dark card layout
+   ========================================================= */
+
+/* ---------- Back link ---------- */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--blue);
+  padding: 24px 0 0;
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+.back-link:hover { gap: 12px; color: var(--blue-deep); }
+
+/* =========================================================
+   DARK CARD SURFACE TOKENS
+   ========================================================= */
+:root {
+  --cd-surface:        #0f1c2e;
+  --cd-surface-2:      #142339;
+  --cd-surface-line:   rgba(255, 255, 255, 0.08);
+  --cd-surface-line-2: rgba(255, 255, 255, 0.14);
+  --cd-text:           #e8f0fe;
+  --cd-text-muted:     #94a9c9;
+  --cd-blue-soft:      rgba(42, 111, 209, 0.12);
+  --cd-blue-bright:    #8ab4f8;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.cd-hero { padding: 32px 0 48px; }
+
+.cd-hero-card {
+  background: linear-gradient(145deg, var(--cd-surface-2) 0%, var(--cd-surface) 100%);
+  border: 1px solid var(--cd-surface-line);
+  border-radius: 20px;
+  padding: 48px 44px;
+  position: relative;
+  overflow: hidden;
+  animation: cdCardIn 0.7s cubic-bezier(0.2, 0, 0, 1) both;
+}
+.cd-hero-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(42, 111, 209, 0.28) 0%, transparent 70%);
+  pointer-events: none;
+}
+@keyframes cdCardIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.cd-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cd-blue-bright);
+  background: var(--cd-blue-soft);
+  padding: 8px 16px;
+  border-radius: 999px;
+  margin-bottom: 22px;
+  border: 1px solid rgba(138, 180, 248, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.cd-hero-card h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--cd-text);
+  margin: 0 0 18px;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  max-width: 22ch;
+  position: relative;
+  z-index: 1;
+}
+
+.cd-hero-card p {
+  color: var(--cd-text-muted);
+  font-size: 1.08rem;
+  line-height: 1.7;
+  max-width: 68ch;
+  margin: 0 0 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.cd-hero-card .btn-solid {
+  background: var(--blue);
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+.cd-hero-card .btn-solid:hover {
+  background: var(--blue-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px var(--blue-glow);
+}
+
+/* =========================================================
+   SECTION TITLE
+   ========================================================= */
+.cd-section-title {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 24px;
+}
+
+/* =========================================================
+   KEY LEARNING PILLARS
+   ========================================================= */
+.cd-pillars { padding: 48px 0 24px; }
+
+.cd-pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.cd-pillar-card {
+  background: linear-gradient(145deg, var(--cd-surface-2) 0%, var(--cd-surface) 100%);
+  border: 1px solid var(--cd-surface-line);
+  border-radius: 16px;
+  padding: 28px 26px 26px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1),
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+  animation: cdCardIn 0.65s cubic-bezier(0.2, 0, 0, 1) both;
+}
+.cd-pillar-card:nth-child(1) { animation-delay: 0.05s; }
+.cd-pillar-card:nth-child(2) { animation-delay: 0.15s; }
+.cd-pillar-card:nth-child(3) { animation-delay: 0.25s; }
+.cd-pillar-card:nth-child(4) { animation-delay: 0.35s; }
+
+.cd-pillar-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(138, 180, 248, 0.4);
+  box-shadow: 0 20px 40px -18px rgba(42, 111, 209, 0.4);
+}
+
+.cd-pillar-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+  margin-bottom: 22px;
+  display: inline-block;
+  filter: drop-shadow(0 6px 12px rgba(42, 111, 209, 0.3));
+  transition: transform 0.3s ease;
+}
+.cd-pillar-card:hover .cd-pillar-icon {
+  transform: scale(1.15) rotate(-6deg);
+}
+
+.cd-pillar-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--cd-text);
+  margin: 0 0 10px;
+  letter-spacing: -0.01em;
+}
+
+.cd-pillar-card p {
+  color: var(--cd-text-muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* =========================================================
+   INTERACTIVE CURRICULUM — accordion
+   ========================================================= */
+.cd-curriculum { padding: 56px 0 64px; }
+
+.cd-accordion { display: grid; gap: 12px; }
+
+.cd-acc-item {
+  background: linear-gradient(145deg, var(--cd-surface-2) 0%, var(--cd-surface) 100%);
+  border: 1px solid var(--cd-surface-line);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.cd-acc-item:hover { border-color: rgba(138, 180, 248, 0.3); }
+.cd-acc-item.is-open {
+  border-color: var(--blue);
+  box-shadow: 0 20px 40px -22px rgba(42, 111, 209, 0.5);
+}
+
+.cd-acc-head {
+  width: 100%;
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  text-align: left;
+  padding: 22px 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+  color: var(--cd-text);
+}
+.cd-acc-head:hover { background: rgba(255, 255, 255, 0.02); }
+
+.cd-acc-label {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  min-width: 0;
+}
+
+.cd-acc-num {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cd-blue-bright);
+  flex-shrink: 0;
+  min-width: 76px;
+}
+
+.cd-acc-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--cd-text);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cd-acc-meta {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-shrink: 0;
+}
+
+.cd-acc-hours {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--cd-text-muted);
+  padding: 6px 14px;
+  border: 1px solid var(--cd-surface-line-2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.cd-acc-icon {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+.cd-acc-icon::before,
+.cd-acc-icon::after {
+  content: "";
+  position: absolute;
+  background: var(--cd-blue-bright);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.cd-acc-icon::before {
+  top: 50%; left: 0;
+  width: 100%; height: 2px;
+  transform: translateY(-50%);
+}
+.cd-acc-icon::after {
+  left: 50%; top: 0;
+  width: 2px; height: 100%;
+  transform: translateX(-50%);
+}
+.cd-acc-item.is-open .cd-acc-icon::after {
+  transform: translateX(-50%) rotate(90deg);
+  opacity: 0;
+}
+.cd-acc-item.is-open .cd-acc-icon::before {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.cd-acc-body {
+  padding: 0 26px 26px;
+  color: var(--cd-text-muted);
+}
+
+.cd-acc-subtitle {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cd-text-muted);
+  margin: 6px 0 16px;
+}
+
+.cd-acc-pills {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+.cd-acc-pills li {
+  position: relative;
+  padding: 14px 16px 14px 44px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--cd-text);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--cd-surface-line);
+  border-radius: 10px;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+.cd-acc-pills li::before {
+  content: "✓";
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #4ade80;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.cd-acc-pills li:hover {
+  transform: translateY(-2px);
+  border-color: rgba(138, 180, 248, 0.4);
+  background: rgba(42, 111, 209, 0.08);
+}
+
+.cd-acc-outcome {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--cd-text-muted);
+  padding: 14px 18px;
+  border-radius: 10px;
+  background: rgba(42, 111, 209, 0.1);
+  border-left: 3px solid var(--blue);
+  margin: 0;
+}
+.cd-acc-outcome strong {
+  color: var(--cd-blue-bright);
+  font-weight: 600;
+}
+
+/* =========================================================
+   STATS + CTA band
+   ========================================================= */
+.cd-footer-band { padding: 40px 0 96px; }
+
+.cd-footer-band .wrap {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 40px;
+  background: linear-gradient(145deg, var(--cd-surface-2) 0%, var(--cd-surface) 100%);
+  border: 1px solid var(--cd-surface-line);
+  border-radius: 18px;
+  padding: 28px 36px;
+}
+
+.cd-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.cd-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 28px;
+  border-left: 1px solid var(--cd-surface-line);
+}
+.cd-stat:first-child { border-left: none; }
+
+.cd-stat-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cd-text-muted);
+}
+.cd-stat-value {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--cd-text);
+  letter-spacing: -0.01em;
+}
+
+.cd-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 36px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--cd-text);
+  border: 1px solid var(--cd-surface-line-2);
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.25s ease, border-color 0.25s ease,
+              transform 0.2s ease, box-shadow 0.25s ease, color 0.25s ease;
+  white-space: nowrap;
+}
+.cd-cta:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -12px var(--blue);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 900px) {
+  .cd-pillar-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cd-footer-band .wrap { grid-template-columns: 1fr; }
+  .cd-cta { width: 100%; }
+}
+
+@media (max-width: 640px) {
+  .cd-hero-card { padding: 32px 24px; }
+  .cd-hero-card h1 { font-size: 1.8rem; }
+  .cd-hero-card p { font-size: 1rem; }
+  .cd-pillar-grid { grid-template-columns: 1fr; gap: 14px; }
+  .cd-acc-head { padding: 18px 20px; gap: 12px; }
+  .cd-acc-label { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .cd-acc-num { min-width: 0; }
+  .cd-acc-name { font-size: 1rem; white-space: normal; }
+  .cd-acc-body { padding: 0 20px 22px; }
+  .cd-acc-pills { grid-template-columns: 1fr; }
+  .cd-footer-band { padding: 24px 0 72px; }
+  .cd-footer-band .wrap { padding: 24px 22px; }
+  .cd-stats { grid-template-columns: 1fr 1fr; row-gap: 12px; }
+  .cd-stat { padding: 4px 12px; }
+  .cd-stat:nth-child(3) { border-left: none; }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  .cd-hero-card,
+  .cd-pillar-card,
+  .cd-pillar-icon,
+  .cd-acc-item,
+  .cd-acc-icon::before,
+  .cd-acc-icon::after,
+  .cd-acc-pills li,
+  .cd-cta {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+/* =========================================================
+   PROFILE PAGES — minimal header
+   On student profile pages, hide the primary nav and the
+   mobile hamburger so only the logo + theme toggle remain.
+   The full header still works on every other page.
+   ========================================================= */
+
+body.course-page .site-header .main-nav,
+body.course-page .site-header .nav-toggle-label,
+body.course-page .site-header #navCheck {
+  display: none !important;
+}
+
+/* Keeps the header row neatly balanced with only 2 items */
+body.course-page .site-header .header-inner {
+  justify-content: space-between;
+}
+

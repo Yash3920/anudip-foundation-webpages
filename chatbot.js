@@ -1,21 +1,32 @@
 /* =========================================================
    ANUDIP AI ASSISTANT — powered by OpenRouter
-   =========================================================
-   API key and model are loaded from config.js (gitignored).
-   To set up locally:
-     1. Copy config.example.js → config.js
-     2. Paste your OpenRouter key into config.js
-     3. Get a free key at https://openrouter.ai/keys
-
-   ⚠️ Since this is a plain static site with no backend, the
-   key is visible in DevTools. Fine for a class project /
-   personal demo. For a real public site, move the fetch()
-   call to a backend server so the key never hits the browser.
+   API key + model come from config.js (gitignored).
    ========================================================= */
-// OPENROUTER_API_KEY and OPENROUTER_MODEL come from config.js
 
+/* ---------- Inject the stylesheet once ---------- */
+(function () {
+  if (document.getElementById('chatbotStyles')) return;
 
-/* Knowledge sent with every request so answers stay accurate. */
+  // Work out how deep we are, so the path works from any page
+  var depth = window.location.pathname.split('/').filter(Boolean).length;
+  var prefix = '';
+
+  // If we're not at the site root, walk back up
+  // Adjust this if your folder structure is different.
+  // Example: /pages/faculty/faculty.html → depth = 3 → prefix = '../../'
+  // If your site is served from a subfolder (e.g. /anudip/), this still works.
+  if (depth > 1) {
+    prefix = '../'.repeat(depth - 1);
+  }
+
+  var link = document.createElement('link');
+  link.id = 'chatbotStyles';
+  link.rel = 'stylesheet';
+  link.href = prefix + 'chatbot.css';
+  document.head.appendChild(link);
+})();
+
+/* ---------- Knowledge sent with every request ---------- */
 const ANUDIP_KNOWLEDGE = `
 You are the AI assistant on the Anudip Foundation website, an Indian NGO
 (founded 2007, Kolkata) that trains marginalised youth and women in digital
@@ -41,7 +52,6 @@ unrelated to Anudip Foundation, politely redirect. If unsure of a detail,
 say so and suggest emailing connect@anudip.org.
 `.trim();
 
-
 /* ---------- Inject widget HTML ---------- */
 const chatbotHTML = `
   <button class="chatbot-bubble" id="chatbotBubble" aria-label="Open Anudip AI assistant">💬</button>
@@ -61,7 +71,6 @@ const chatbotHTML = `
 `;
 document.body.insertAdjacentHTML('beforeend', chatbotHTML);
 
-
 /* ---------- Wire up UI ---------- */
 const chatbotBubble = document.getElementById('chatbotBubble');
 const chatbotPanel = document.getElementById('chatbotPanel');
@@ -77,6 +86,12 @@ document.getElementById('chatbotCloseBtn').addEventListener('click', () => {
   chatbotPanel.classList.remove('is-open');
 });
 
+/* Close on Escape */
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && chatbotPanel.classList.contains('is-open')) {
+    chatbotPanel.classList.remove('is-open');
+  }
+});
 
 /* ---------- Chat logic ---------- */
 let chatHistory = [];
@@ -94,7 +109,7 @@ async function sendChatMessage() {
   if (!question) return;
 
   if (!OPENROUTER_API_KEY || OPENROUTER_API_KEY === "PASTE_YOUR_OPENROUTER_API_KEY_HERE") {
-    addMessage('The site owner needs to add an OpenRouter API key in chatbot.js first.', 'system');
+    addMessage('The site owner needs to add an OpenRouter API key in config.js first.', 'system');
     return;
   }
 

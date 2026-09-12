@@ -1,88 +1,274 @@
 /* =========================================================
-   This site is intentionally almost all HTML + CSS.
-   The mobile menu uses a pure-CSS checkbox hack (see the
-   header in each page). JavaScript here only does two
-   small things that genuinely need it:
+   THEME
+========================================================= */
 
-   1. Opening/closing the gallery lightbox on events.html
-   2. Validating the contact form on contact.html
+(function () {
 
-   Both blocks check that their elements exist first, so
-   this one file can be safely linked from every page.
-   ========================================================= */
+    var saved = localStorage.getItem("theme");
 
+    if (saved === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+        document.documentElement.setAttribute("data-theme", "light");
+    }
 
-/* ---------------------------------------------------------
-   1. GALLERY LIGHTBOX (events.html)
-   Clicking a gallery tile opens a simple modal showing its
-   caption. Closes on the close button, backdrop click, or Esc.
-   --------------------------------------------------------- */
-const galleryItems = document.querySelectorAll('.gallery-item');
-const lightbox = document.getElementById('lightbox');
-
-if (galleryItems.length && lightbox) {
-  const lightboxTitle = document.getElementById('lightboxTitle');
-  const closeBtn = document.getElementById('lightboxClose');
-
-  function openLightbox(caption) {
-    lightboxTitle.textContent = caption;
-    lightbox.classList.add('is-open');
-  }
-  function closeLightbox() {
-    lightbox.classList.remove('is-open');
-  }
-
-  galleryItems.forEach(item => {
-    item.addEventListener('click', () => openLightbox(item.dataset.caption));
-  });
-
-  closeBtn.addEventListener('click', closeLightbox);
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox(); // clicked the dark backdrop, not the box
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeLightbox();
-  });
-}
+})();
 
 
-/* ---------------------------------------------------------
-   2. CONTACT FORM VALIDATION (contact.html)
-   --------------------------------------------------------- */
-const contactForm = document.getElementById('contactForm');
+/* =========================================================
+   LOAD HEADER + FOOTER
+========================================================= */
 
-if (contactForm) {
-  const contactNote = document.getElementById('contactNote');
+document.addEventListener("DOMContentLoaded", function () {
 
-  function setFieldError(fieldName, message) {
-    const errorEl = document.querySelector(`[data-error-for="${fieldName}"]`);
-    if (!errorEl) return;
-    errorEl.textContent = message;
-    errorEl.closest('.field').classList.toggle('has-error', Boolean(message));
-  }
+    /*
+       If page is inside /components/,
+       go two folders back.
 
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+       index.html:
+       ./header.html
 
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+       components/about/about.html:
+       ../../header.html
+    */
 
-    let isValid = true;
+    var path = window.location.pathname;
 
-    if (name.length < 2) { setFieldError('name', 'Please enter your name.'); isValid = false; }
-    else { setFieldError('name', ''); }
+    var basePath = path.includes("/components/")
+        ? "../../"
+        : "./";
 
-    if (!emailPattern.test(email)) { setFieldError('email', 'Please enter a valid email address.'); isValid = false; }
-    else { setFieldError('email', ''); }
 
-    if (message.length < 10) { setFieldError('message', 'Please write at least a short sentence.'); isValid = false; }
-    else { setFieldError('message', ''); }
+    /* =====================================================
+       HEADER
+    ===================================================== */
 
-    if (!isValid) { contactNote.textContent = ''; return; }
+    fetch(basePath + "header.html")
 
-    contactNote.textContent = `Thanks, ${name.split(' ')[0]} — we'll reply to ${email} soon.`;
-    contactForm.reset();
-  });
+        .then(function (response) {
+
+            if (!response.ok) {
+                throw new Error(
+                    "Header could not be loaded: " +
+                    response.status
+                );
+            }
+
+            return response.text();
+
+        })
+
+        .then(function (html) {
+
+            var headerContainer =
+                document.getElementById("header");
+
+            if (headerContainer) {
+
+                headerContainer.innerHTML = html;
+
+                setupHeader();
+
+            }
+
+        })
+
+        .catch(function (error) {
+
+            console.error("HEADER ERROR:", error);
+
+        });
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    fetch(basePath + "footer.html")
+
+        .then(function (response) {
+
+            if (!response.ok) {
+                throw new Error(
+                    "Footer could not be loaded: " +
+                    response.status
+                );
+            }
+
+            return response.text();
+
+        })
+
+        .then(function (html) {
+
+            var footerContainer =
+                document.getElementById("footer");
+
+            if (footerContainer) {
+
+                footerContainer.innerHTML = html;
+
+            }
+
+        })
+
+        .catch(function (error) {
+
+            console.error("FOOTER ERROR:", error);
+
+        });
+
+});
+
+
+/* =========================================================
+   HEADER FUNCTIONS
+========================================================= */
+
+function setupHeader() {
+
+    var toggle =
+        document.getElementById("themeToggle");
+
+    var navCheck =
+        document.getElementById("navCheck");
+
+    var header =
+        document.getElementById("siteHeader");
+
+
+    /* =====================================================
+       DARK MODE
+    ===================================================== */
+
+    if (toggle) {
+
+        var root = document.documentElement;
+
+
+        function currentTheme() {
+
+            return root.getAttribute("data-theme") === "dark"
+                ? "dark"
+                : "light";
+
+        }
+
+
+        function updateThemeLabel() {
+
+            var isDark =
+                currentTheme() === "dark";
+
+
+            toggle.setAttribute(
+                "aria-label",
+                isDark
+                    ? "Switch to light theme"
+                    : "Switch to dark theme"
+            );
+
+
+            var label =
+                toggle.querySelector(
+                    ".theme-toggle-label"
+                );
+
+
+            if (label) {
+
+                label.textContent =
+                    isDark
+                        ? "Light mode"
+                        : "Dark mode";
+
+            }
+
+        }
+
+
+        updateThemeLabel();
+
+
+        toggle.addEventListener(
+            "click",
+            function () {
+
+                var next =
+                    currentTheme() === "dark"
+                        ? "light"
+                        : "dark";
+
+
+                root.setAttribute(
+                    "data-theme",
+                    next
+                );
+
+
+                localStorage.setItem(
+                    "theme",
+                    next
+                );
+
+
+                updateThemeLabel();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       STICKY HEADER
+    ===================================================== */
+
+    if (header) {
+
+        function updateHeader() {
+
+            header.classList.toggle(
+                "scrolled",
+                window.scrollY > 8
+            );
+
+        }
+
+
+        updateHeader();
+
+
+        window.addEventListener(
+            "scroll",
+            updateHeader,
+            { passive: true }
+        );
+
+    }
+
+
+    /* =====================================================
+       MOBILE NAV
+    ===================================================== */
+
+    if (navCheck) {
+
+        document
+            .querySelectorAll(".main-nav a")
+            .forEach(function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        navCheck.checked = false;
+
+                    }
+                );
+
+            });
+
+    }
+
 }

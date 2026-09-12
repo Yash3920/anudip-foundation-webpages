@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portfolio — Anudip Foundation</title>
+    <meta name="description"
+        content="Real projects built by Anudip learners — web apps, dashboards, AI tools, and design work from recent batches.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../index.css">
+    <link rel="stylesheet" href="students.css">
+
+</head>
+
+<body>
+
+    <!-- Header injected by script.js -->
+    <div id="header"></div>
+
+    <main id="main">
+
+        <!-- ========== PAGE HERO with animated project-deploy illustration ========== -->
+        <section class="page-hero">
+            <div class="wrap page-hero-grid">
+
+                <div class="page-hero-copy">
+                    <p class="eyebrow">Student Portfolio</p>
+                    <h1>Projects our learners built, not just studied</h1>
+                    <p>Every course ends with a real project. Here's a sample of what recent batches have shipped.</p>
+                </div>
+
+                <!-- Animated project-deploy illustration -->
+                <aside class="page-hero-art" aria-hidden="true">
+                    <div class="art-glow"></div>
+
+                    <svg viewBox="0 0 400 400" class="art-svg" xmlns="http://www.w3.org/2000/svg">
+
+                        <!-- Orbiting tech icons -->
+                        <g class="orbit-group orbit-1">
+                            <g transform="translate(200 60)">
+                                <circle r="15" class="icon-bg" />
+                                <text class="icon-glyph" text-anchor="middle" y="5">&lt;/&gt;</text>
+                            </g>
+                        </g>
+                        <g class="orbit-group orbit-2">
+                            <g transform="translate(330 200)">
+                                <circle r="15" class="icon-bg icon-bg-2" />
+                                <text class="icon-glyph" text-anchor="middle" y="5">DB</text>
+                            </g>
+                        </g>
+                        <g class="orbit-group orbit-3">
+                            <g transform="translate(200 340)">
+                                <circle r="15" class="icon-bg icon-bg-3" />
+                                <text class="icon-glyph" text-anchor="middle" y="5">AI</text>
+                            </g>
+                        </g>
+                        <g class="orbit-group orbit-4">
+                            <g transform="translate(70 200)">
+                                <circle r="15" class="icon-bg icon-bg-4" />
+                                <text class="icon-glyph" text-anchor="middle" y="5">UI</text>
+                            </g>
+                        </g>
+
+                        <!-- Orbit ring -->
+                        <circle class="orbit-path" cx="200" cy="200" r="140" />
+
+                        <!-- Pulse rings behind the browser -->
+                        <circle class="ring ring-1" cx="200" cy="200" r="80" />
+                        <circle class="ring ring-2" cx="200" cy="200" r="80" />
+
+                        <!-- Centre: browser window mockup -->
+                        <g class="browser" transform="translate(200 200)">
+                            <rect class="br-frame" x="-90" y="-70" width="180" height="140" rx="10" />
+                            <rect class="br-bar" x="-90" y="-70" width="180" height="22" rx="10" />
+                            <circle class="br-dot br-dot-1" cx="-74" cy="-59" r="3.5" />
+                            <circle class="br-dot br-dot-2" cx="-62" cy="-59" r="3.5" />
+                            <circle class="br-dot br-dot-3" cx="-50" cy="-59" r="3.5" />
+
+                            <!-- Content: rising bar chart (deploy success) -->
+                            <g class="chart">
+                                <rect class="bar bar-1" x="-68" y="30" width="14" height="0" rx="2" />
+                                <rect class="bar bar-2" x="-48" y="20" width="14" height="0" rx="2" />
+                                <rect class="bar bar-3" x="-28" y="10" width="14" height="0" rx="2" />
+                                <rect class="bar bar-4" x="-8" y="0" width="14" height="0" rx="2" />
+                                <rect class="bar bar-5" x="12" y="-12" width="14" height="0" rx="2" />
+                                <rect class="bar bar-6" x="32" y="-24" width="14" height="0" rx="2" />
+                                <rect class="bar bar-7" x="52" y="-38" width="14" height="0" rx="2" />
+                            </g>
+
+                            <!-- Success tick badge -->
+                            <g class="tick-badge">
+                                <circle r="12" class="tick-bg" />
+                                <path d="M -5 1 L -1 5 L 6 -3" class="tick-mark" />
+                            </g>
+                        </g>
+
+                    </svg>
+
+                    <!-- Floating chips -->
+                    <span class="chip chip-1">SHIP</span>
+                    <span class="chip chip-2">BUILD</span>
+                    <span class="chip chip-3">CODE</span>
+                    <span class="chip chip-4">DEPLOY</span>
+                    <span class="chip chip-5">DESIGN</span>
+                    <span class="chip chip-6">SHOWCASE</span>
+                </aside>
+
+            </div>
+        </section>
+
+        <!-- ========== PORTFOLIO GRID ========== -->
+        <section class="portfolio-section">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2>Recent student projects</h2>
+                    <p>Six capstones from our last three graduating batches — each one built for a real person,
+                        community, or small business.</p>
+                </div>
+
+                <div class="portfolio-grid">
+
+                    <article class="portfolio-card">
+                        <a href="priya.html" class="portfolio-card">
+
+                            <div class="portfolio-thumb">
+                                <img src="images/priya.png" alt="">
+                                <span class="thumb-tag">Web Development</span>
+                            </div>
+                            <div class="portfolio-body">
+                                <span class="student-name">Priya Banerjee</span>
+                                <h3>Local Tutor Booking Site</h3>
+                                <p>A responsive booking site connecting home tutors with students in her district, built
+                                    during the Web Development course.</p>
+                                <div class="portfolio-stack">
+                                    <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="portfolio-card">
+                        <a href="rahul.html" class="portfolio-card">
+
+                            <div class="portfolio-thumb">
+                                <img src="images/rahul.png" alt="">
+                                <span class="thumb-tag">Python</span>
+                            </div>
+                            <div class="portfolio-body">
+                                <span class="student-name">Rahul Kumar</span>
+                                <h3>Household Budget Tracker</h3>
+                                <p>A command-line and simple GUI tool to help families track monthly spending, built as
+                                    a
+                                    Python course capstone.</p>
+                                <div class="portfolio-stack">
+                                    <span>Python</span><span>SQLite</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="portfolio-card">
+                        <a href="sana.html" class="portfolio-card">
+
+                            <div class="portfolio-thumb">
+                                <img src="images/sana.png" alt="">
+                                <span class="thumb-tag">Data Analytics</span>
+                            </div>
+                            <div class="portfolio-body">
+                                <span class="student-name">Sana Mallick</span>
+                                <h3>Crop Price Dashboard</h3>
+                                <p>A dashboard visualising local mandi crop prices over time, to help small farmers
+                                    decide
+                                    when to sell.</p>
+                                <div class="portfolio-stack">
+                                    <span>Excel</span><span>SQL</span><span>Power BI</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="portfolio-card">
+                        <a href="arjun.html" class="portfolio-card">
+
+                            <div class="portfolio-thumb">
+                                <img src="images/arjun.png" alt="">
+                                <span class="thumb-tag">AI Academy</span>
+                            </div>
+                            <div class="portfolio-body">
+                                <span class="student-name">Arjun Toppo</span>
+                                <h3>AI Resume Reviewer</h3>
+                                <p>A small AI-assisted tool that reviews a resume against a job description and suggests
+                                    edits, built in the AI Academy track.</p>
+                                <div class="portfolio-stack">
+                                    <span>Python</span><span>OpenAI API</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="portfolio-card">
+                        <a href="madhabi.html" class="portfolio-card">
+
+                            <div class="portfolio-thumb">
+                                <img src="images/madhabi.png" alt="">
+                                <span class="thumb-tag">Front-End Design</span>
+                            </div>
+                            <div class="portfolio-body">
+                                <span class="student-name">Madhabi Das</span>
+                                <h3>NGO Volunteer Portal</h3>
+                                <p>A sign-up and scheduling portal built for a local community group, her final project
+                                    for
+                                    Front-End Design Fundamentals.</p>
+                                <div class="portfolio-stack">
+                                    <span>HTML</span><span>CSS</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="portfolio-card">
+                        <a href="yamini.html" class="portfolio-card">
+
+                            <div class="portfolio-thumb">
+                                <img src="images/yamini.png" alt="">
+                                <span class="thumb-tag">Data Visualisation</span>
+                            </div>
+                            <div class="portfolio-body">
+                                <span class="student-name">Yamini Ramaswamy</span>
+                                <h3>Sales Performance Dashboard</h3>
+                                <p>An interactive sales dashboard built for a mock retail dataset, her capstone for Data
+                                    Visualisation &amp; Dashboards.</p>
+                                <div class="portfolio-stack">
+                                    <span>SQL</span><span>Power BI</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer injected by script.js -->
+    <div id="footer"></div>
+
+    <script src="students.js"></script>
+    <script src="../../script.js"></script>
+    <script src="../../config.js"></script>
+    <script src="../../chatbot.js"></script>
+
+</body>
+
+</html>

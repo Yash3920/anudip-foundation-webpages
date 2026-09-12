@@ -6,4 +6,4 @@
    3. config.js is gitignored — it will never be pushed
    ========================================================= */
 const OPENROUTER_API_KEY = "PASTE_YOUR_OPENROUTER_API_KEY_HERE";
-const OPENROUTER_MODEL   = "openai/gpt-4o-mini";
+const OPENROUTER_MODEL = "openai/gpt-4o-mini";

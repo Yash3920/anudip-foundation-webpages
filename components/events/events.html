@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events &amp; Gallery — Anudip Foundation</title>
+  <meta name="description"
+    content="Workshops, hackathons and the moments in between at Anudip Foundation. See what's coming up and look back at recent activity.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../../index.css">
+  <link rel="stylesheet" href="events.css">
+
+</head>
+
+<body>
+
+  <!-- Header injected by script.js -->
+  <div id="header"></div>
+
+  <main id="main">
+
+    <!-- ========== PAGE HERO ========== -->
+    <!-- ========== PAGE HERO with animated events illustration ========== -->
+    <section class="page-hero">
+      <div class="wrap page-hero-grid">
+
+        <div class="page-hero-copy">
+          <p class="eyebrow">Events &amp; Gallery</p>
+          <h1>Workshops, hackathons and the moments in between</h1>
+          <p>Learning at Anudip doesn't stop at the syllabus — here's what's coming up, and a look back at recent
+            activity.</p>
+        </div>
+
+        <!-- Animated events illustration -->
+        <aside class="page-hero-art" aria-hidden="true">
+          <div class="art-glow"></div>
+
+          <svg viewBox="0 0 400 400" class="art-svg" xmlns="http://www.w3.org/2000/svg">
+
+            <!-- Radial spark bursts (fresh-idea pulses) -->
+            <g class="sparks" transform="translate(200 200)">
+              <g class="spark spark-1">
+                <line x1="0" y1="0" x2="0" y2="-140" />
+              </g>
+              <g class="spark spark-2">
+                <line x1="0" y1="0" x2="120" y2="-70" />
+              </g>
+              <g class="spark spark-3">
+                <line x1="0" y1="0" x2="140" y2="0" />
+              </g>
+              <g class="spark spark-4">
+                <line x1="0" y1="0" x2="120" y2="70" />
+              </g>
+              <g class="spark spark-5">
+                <line x1="0" y1="0" x2="0" y2="140" />
+              </g>
+              <g class="spark spark-6">
+                <line x1="0" y1="0" x2="-120" y2="70" />
+              </g>
+              <g class="spark spark-7">
+                <line x1="0" y1="0" x2="-140" y2="0" />
+              </g>
+              <g class="spark spark-8">
+                <line x1="0" y1="0" x2="-120" y2="-70" />
+              </g>
+            </g>
+
+            <!-- Orbit ring -->
+            <circle class="orbit-path" cx="200" cy="200" r="140" />
+
+            <!-- Orbiting event-type icons -->
+            <g class="orbit-group orbit-1">
+              <g class="icon-node" transform="translate(200 60)">
+                <circle r="14" class="icon-bg" />
+                <text class="icon-glyph" text-anchor="middle" y="5">&lt;/&gt;</text>
+              </g>
+            </g>
+            <g class="orbit-group orbit-2">
+              <g class="icon-node" transform="translate(340 200)">
+                <circle r="14" class="icon-bg icon-bg-2" />
+                <text class="icon-glyph" text-anchor="middle" y="5">&#127908;</text>
+              </g>
+            </g>
+            <g class="orbit-group orbit-3">
+              <g class="icon-node" transform="translate(200 340)">
+                <circle r="14" class="icon-bg icon-bg-3" />
+                <text class="icon-glyph" text-anchor="middle" y="5">&#127942;</text>
+              </g>
+            </g>
+            <g class="orbit-group orbit-4">
+              <g class="icon-node" transform="translate(60 200)">
+                <circle r="14" class="icon-bg icon-bg-4" />
+                <text class="icon-glyph" text-anchor="middle" y="5">&#128188;</text>
+              </g>
+            </g>
+
+            <!-- Centre: flipping calendar -->
+            <g class="calendar" transform="translate(200 200)">
+              <rect class="cal-page cal-page-1" x="-46" y="-46" width="92" height="92" rx="12" />
+              <rect class="cal-page cal-page-2" x="-46" y="-46" width="92" height="92" rx="12" />
+              <rect class="cal-page cal-page-3" x="-46" y="-46" width="92" height="92" rx="12" />
+              <rect class="cal-top" x="-46" y="-46" width="92" height="26" rx="12" />
+              <circle cx="-26" cy="-33" r="2.5" class="cal-rivet" />
+              <circle cx="0" cy="-33" r="2.5" class="cal-rivet" />
+              <circle cx="26" cy="-33" r="2.5" class="cal-rivet" />
+              <text class="cal-day" text-anchor="middle" y="18">14</text>
+              <text class="cal-month" text-anchor="middle" y="36">OCT</text>
+            </g>
+
+            <!-- Pulse rings behind calendar -->
+            <circle class="ring ring-1" cx="200" cy="200" r="70" />
+            <circle class="ring ring-2" cx="200" cy="200" r="70" />
+          </svg>
+
+          <!-- Floating chips -->
+          <span class="chip chip-1">HACK</span>
+          <span class="chip chip-2">TALK</span>
+          <span class="chip chip-3">PITCH</span>
+          <span class="chip chip-4">HIRE</span>
+          <span class="chip chip-5">MEET</span>
+          <span class="chip chip-6">SHIP</span>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- ========== UPCOMING EVENTS ========== -->
+    <section class="events-list">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Upcoming events</h2>
+          <p>Four dates on the calendar right now — all free for enrolled learners.</p>
+        </div>
+
+        <div class="event-list-body">
+
+          <article class="event-row">
+            <div class="event-date">
+              <span class="day">14</span>
+              <span class="month">Oct</span>
+            </div>
+            <div class="event-info">
+              <h3>48-Hour Hackathon: Build for Bharat</h3>
+              <p>Teams build a working prototype solving a local community problem, judged by industry mentors.</p>
+            </div>
+            <span class="event-tag">Hackathon</span>
+          </article>
+
+          <article class="event-row">
+            <div class="event-date">
+              <span class="day">22</span>
+              <span class="month">Oct</span>
+            </div>
+            <div class="event-info">
+              <h3>AI in the Workplace — Employer Workshop</h3>
+              <p>A hands-on session with corporate partners on using AI tools responsibly at work.</p>
+            </div>
+            <span class="event-tag">Workshop</span>
+          </article>
+
+          <article class="event-row">
+            <div class="event-date">
+              <span class="day">05</span>
+              <span class="month">Nov</span>
+            </div>
+            <div class="event-info">
+              <h3>Mock Interview Day</h3>
+              <p>Graduating learners sit live mock interviews with volunteer professionals from partner companies.</p>
+            </div>
+            <span class="event-tag">Career prep</span>
+          </article>
+
+          <article class="event-row">
+            <div class="event-date">
+              <span class="day">19</span>
+              <span class="month">Nov</span>
+            </div>
+            <div class="event-info">
+              <h3>DISHA Job Drive — Kolkata Centre</h3>
+              <p>An on-site hiring drive bringing multiple employers to campus for same-day interviews.</p>
+            </div>
+            <span class="event-tag">Placement drive</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== GALLERY ========== -->
+    <section class="gallery">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Gallery</h2>
+          <p>Click a tile for a caption from that moment.</p>
+        </div>
+
+        <div class="gallery-grid">
+
+          <button class="gallery-item" style="background-image:url('images/event-certificate-day.jpg')"
+            data-caption="Certificate distribution at Science City, Kolkata">
+            <span class="gallery-label">Certificate Day</span>
+          </button>
+
+          <button class="gallery-item" style="background-image:url('images/event-project-showcase.jpg')"
+            data-caption="Students presenting their final projects to a panel of mentors">
+            <span class="gallery-label">Project Showcase</span>
+          </button>
+
+          <button class="gallery-item" style="background-image:url('images/event-soft-skills.jpg')"
+            data-caption="A soft-skills class focused on communication and teamwork">
+            <span class="gallery-label">Soft Skills Class</span>
+          </button>
+
+          <button class="gallery-item" style="background-image:url('images/event-hardware-lab.jpg')"
+            data-caption="Hands-on hardware and networking practical session">
+            <span class="gallery-label">Hardware Lab</span>
+          </button>
+
+          <button class="gallery-item" style="background-image:url('images/event-ai-panel.jpg')"
+            data-caption="Panel discussion on AI and the changing employment landscape">
+            <span class="gallery-label">AI Panel</span>
+          </button>
+
+          <button class="gallery-item" style="background-image:url('images/event-job-drive.jpg')"
+            data-caption="The DISHA job drive connecting graduates with employers">
+            <span class="gallery-label">Job Drive</span>
+          </button>
+
+          <button class="gallery-item" style="background-image:url('images/event-graduation-day.jpg')"
+            data-caption="Graduates celebrating after completing their English and IT training">
+            <span class="gallery-label">Graduation Day</span>
+          </button>
+
+          <button class="gallery-item" style="background-image:url('images/event-team-meet.jpg')"
+            data-caption="Regional trainers meeting at the Annual Strategy Meet">
+            <span class="gallery-label">Team Meet</span>
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== LIGHTBOX ========== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle" hidden>
+    <div class="lightbox-box">
+      <span class="lightbox-mark" aria-hidden="true">&#8220;</span>
+      <h3 id="lightboxTitle">Caption</h3>
+      <p id="lightboxText">Photo from an Anudip Foundation event.</p>
+      <button class="btn btn-outline lightbox-close" id="lightboxClose" type="button">Close</button>
+    </div>
+  </div>
+
+  <!-- Footer injected by script.js -->
+  <div id="footer"></div>
+
+  <script src="events.js"></script>
+  <script src="../../script.js"></script>
+  <script src="../../config.js"></script>
+  <script src="../../chatbot.js"></script>
+
+</body>
+
+</html>

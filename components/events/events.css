@@ -1,0 +1,934 @@
+/* =========================================================
+   EVENTS & GALLERY — page-specific styles
+   Shared tokens, nav, buttons, footer come from index.css
+   ========================================================= */
+
+/* ---------- PAGE HERO (matches About & Contact) ---------- */
+.page-hero {
+  padding: 96px 0 64px;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(160deg, var(--paper-soft) 0%, var(--paper) 60%);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -8%;
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--blue-soft) 0%, transparent 70%);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.page-hero .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero .eyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--blue);
+  font-weight: 600;
+  margin-bottom: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.page-hero h1 {
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  max-width: 22ch;
+  margin-bottom: 18px;
+  letter-spacing: -0.02em;
+}
+
+.page-hero p {
+  max-width: 62ch;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+/* ---------- SHARED SECTION HEAD ---------- */
+.section-head {
+  margin-bottom: 40px;
+  max-width: 56ch;
+}
+
+.section-head h2 {
+  position: relative;
+  display: inline-block;
+}
+
+.section-head h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 3px;
+  margin-top: 10px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--blue-mid));
+}
+
+.section-head p {
+  margin-top: 12px;
+  font-size: 1rem;
+}
+
+/* =========================================================
+   UPCOMING EVENTS
+   ========================================================= */
+.events-list {
+  padding: 80px 0 40px;
+}
+
+.event-list-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.event-row {
+  display: grid;
+  grid-template-columns: 110px 1fr auto;
+  align-items: center;
+  gap: 28px;
+  padding: 26px 24px;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+  border-radius: var(--radius);
+  margin-bottom: 14px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  border: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+}
+
+.event-row::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--blue), var(--blue-mid));
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.3s ease;
+}
+
+.event-row:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--blue);
+}
+
+.event-row:hover::before {
+  transform: scaleY(1);
+}
+
+/* Date badge */
+.event-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 82px;
+  height: 82px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, var(--blue), var(--blue-deep));
+  color: #fff;
+  box-shadow: 0 8px 20px var(--blue-glow);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.event-row:hover .event-date {
+  transform: scale(1.06) rotate(-4deg);
+}
+
+.event-date .day {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.event-date .month {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-top: 4px;
+  opacity: 0.9;
+}
+
+.event-info h3 {
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.event-info p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 62ch;
+}
+
+.event-tag {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--blue);
+  background: var(--blue-soft);
+  padding: 7px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+  align-self: center;
+}
+
+/* =========================================================
+   GALLERY
+   ========================================================= */
+.gallery {
+  padding: 72px 0 104px;
+  background: var(--paper-soft);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.gallery-item {
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--blue-soft), var(--blue-mid));
+  background-size: cover;
+  background-position: center;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  transition: transform 0.25s ease, box-shadow 0.3s ease;
+  font-family: inherit;
+  text-align: left;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.gallery-item:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
+
+/* Gradient overlay */
+.gallery-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 37, 64, 0.78) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.gallery-item:hover::after,
+.gallery-item:focus-visible::after {
+  opacity: 1;
+}
+
+/* Label */
+.gallery-label {
+  position: relative;
+  z-index: 1;
+  padding: 12px 16px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-label,
+.gallery-item:focus-visible .gallery-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================================
+   LIGHTBOX
+   ========================================================= */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 37, 64, 0.92);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 400;
+  padding: 24px;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.lightbox.is-open {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.lightbox-box {
+  background: var(--paper);
+  border-radius: var(--radius);
+  max-width: 520px;
+  width: 100%;
+  padding: 40px 36px 32px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  animation: popIn 0.3s cubic-bezier(0.2, 0, 0, 1);
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.94);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.lightbox-mark {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  line-height: 0.55;
+  color: var(--blue);
+  opacity: 0.5;
+  display: block;
+  margin-bottom: 18px;
+}
+
+.lightbox-box h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.lightbox-box p {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: var(--muted);
+  margin-bottom: 26px;
+}
+
+.lightbox-close {
+  min-width: 140px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 960px) {
+  .event-row {
+    grid-template-columns: 80px 1fr;
+    row-gap: 12px;
+  }
+
+  .event-tag {
+    grid-column: 2;
+    align-self: flex-start;
+    justify-self: flex-start;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .events-list {
+    padding: 64px 0 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-hero {
+    padding: 72px 0 48px;
+  }
+
+  .event-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 22px 20px;
+  }
+
+  .event-date {
+    width: 68px;
+    height: 68px;
+    flex-direction: row;
+    gap: 6px;
+  }
+
+  .event-date .day {
+    font-size: 1.35rem;
+  }
+
+  .event-tag {
+    grid-column: 1;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .gallery {
+    padding: 56px 0 80px;
+  }
+
+  .lightbox-box {
+    padding: 32px 24px 24px;
+  }
+}
+
+@media (max-width: 420px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- REDUCED MOTION ---------- */
+@media (prefers-reduced-motion: reduce) {
+
+  .event-row,
+  .event-date,
+  .gallery-item,
+  .lightbox,
+  .lightbox-box {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* =========================================================
+   PAGE HERO — with animated events illustration
+   ========================================================= */
+
+.page-hero {
+  padding: 96px 0 72px;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(160deg, var(--paper-soft) 0%, var(--paper) 60%);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -8%;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--blue-soft) 0%, transparent 70%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.page-hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.page-hero-copy .eyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--blue);
+  font-weight: 600;
+  margin-bottom: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.page-hero-copy h1 {
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  max-width: 22ch;
+  margin-bottom: 18px;
+  letter-spacing: -0.02em;
+}
+
+.page-hero-copy p {
+  max-width: 58ch;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+/* ---------- Animated illustration ---------- */
+.page-hero-art {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  isolation: isolate;
+}
+
+.art-glow {
+  position: absolute;
+  inset: 12%;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--blue-soft) 0%, transparent 68%);
+  opacity: 0.85;
+  z-index: 0;
+  animation: glowPulse 5s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+}
+
+.art-svg {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+/* ---------- Pulse rings behind calendar ---------- */
+.ring {
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 1.6;
+  opacity: 0;
+  transform-origin: 200px 200px;
+  animation: ringPulse 4.5s ease-out infinite;
+}
+
+.ring-2 {
+  animation-delay: 2.2s;
+}
+
+@keyframes ringPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+
+  70% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* ---------- Orbit ring path ---------- */
+.orbit-path {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 1.2;
+  stroke-dasharray: 4 8;
+  transform-origin: 200px 200px;
+  animation: spin 45s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- Orbiting event-type icons ---------- */
+.orbit-group {
+  transform-origin: 200px 200px;
+  animation: spin 22s linear infinite;
+}
+
+.orbit-2 {
+  animation-duration: 26s;
+  animation-direction: reverse;
+}
+
+.orbit-3 {
+  animation-duration: 30s;
+}
+
+.orbit-4 {
+  animation-duration: 18s;
+  animation-direction: reverse;
+}
+
+.icon-bg {
+  fill: var(--blue);
+  filter: drop-shadow(0 4px 10px var(--blue-glow));
+}
+
+.icon-bg-2 {
+  fill: var(--blue-mid);
+}
+
+.icon-bg-3 {
+  fill: var(--blue-deep);
+}
+
+.icon-bg-4 {
+  fill: var(--blue);
+}
+
+.icon-glyph {
+  fill: #fff;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  dominant-baseline: middle;
+}
+
+/* ---------- Radial spark bursts ---------- */
+.sparks {
+  transform-origin: 200px 200px;
+}
+
+.spark line {
+  stroke: var(--blue);
+  stroke-width: 2;
+  stroke-linecap: round;
+  opacity: 0;
+  transform-origin: 200px 200px;
+  animation: sparkFlash 4.5s ease-out infinite;
+}
+
+.spark-1 line {
+  animation-delay: 0s;
+}
+
+.spark-2 line {
+  animation-delay: 0.15s;
+}
+
+.spark-3 line {
+  animation-delay: 0.30s;
+}
+
+.spark-4 line {
+  animation-delay: 0.45s;
+}
+
+.spark-5 line {
+  animation-delay: 0.60s;
+}
+
+.spark-6 line {
+  animation-delay: 0.75s;
+}
+
+.spark-7 line {
+  animation-delay: 0.90s;
+}
+
+.spark-8 line {
+  animation-delay: 1.05s;
+}
+
+@keyframes sparkFlash {
+  0% {
+    opacity: 0;
+    stroke-dasharray: 0 200;
+  }
+
+  15% {
+    opacity: 0.9;
+  }
+
+  60% {
+    opacity: 0.7;
+    stroke-dasharray: 100 200;
+  }
+
+  100% {
+    opacity: 0;
+    stroke-dasharray: 200 200;
+  }
+}
+
+/* ---------- Flipping calendar ---------- */
+.calendar {
+  transform-origin: 200px 200px;
+  animation: calFloat 4s ease-in-out infinite;
+}
+
+@keyframes calFloat {
+
+  0%,
+  100% {
+    transform: translate(200px, 200px) translateY(0);
+  }
+
+  50% {
+    transform: translate(200px, 200px) translateY(-6px);
+  }
+}
+
+.cal-page {
+  fill: var(--paper);
+  stroke: var(--line);
+  stroke-width: 1.5;
+  filter: drop-shadow(0 8px 20px rgba(10, 37, 64, 0.12));
+  transform-origin: 200px 154px;
+  /* top-centre pivot */
+}
+
+.cal-page-1 {
+  animation: flip1 6s ease-in-out infinite;
+}
+
+.cal-page-2 {
+  animation: flip2 6s ease-in-out infinite;
+}
+
+.cal-page-3 {
+  animation: flip3 6s ease-in-out infinite;
+}
+
+/* The three pages flip in rotation like a tear-off calendar */
+@keyframes flip1 {
+
+  0%,
+  30% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+
+  33%,
+  100% {
+    transform: rotateX(-90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flip2 {
+
+  0%,
+  33% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+
+  63% {
+    transform: rotateX(-90deg);
+    opacity: 0;
+  }
+
+  66%,
+  100% {
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flip3 {
+
+  0%,
+  66% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+
+  96% {
+    transform: rotateX(-90deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+.cal-top {
+  fill: var(--blue);
+  filter: drop-shadow(0 4px 10px var(--blue-glow));
+}
+
+.cal-rivet {
+  fill: rgba(255, 255, 255, 0.6);
+}
+
+.cal-day {
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 700;
+  fill: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.cal-month {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  fill: var(--muted);
+  letter-spacing: 0.14em;
+}
+
+/* ---------- Floating chips ---------- */
+.chip {
+  position: absolute;
+  z-index: 3;
+  padding: 6px 12px;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  color: var(--blue);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+  animation: chipFloat 6s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+.chip-1 {
+  top: 6%;
+  left: 2%;
+  animation-delay: 0s;
+}
+
+.chip-2 {
+  top: 24%;
+  right: -2%;
+  animation-delay: 1s;
+}
+
+.chip-3 {
+  bottom: 22%;
+  left: -2%;
+  animation-delay: 2s;
+}
+
+.chip-4 {
+  bottom: 6%;
+  right: 4%;
+  animation-delay: 3s;
+}
+
+.chip-5 {
+  top: 50%;
+  left: -6%;
+  animation-delay: 4s;
+}
+
+.chip-6 {
+  top: 50%;
+  right: -6%;
+  animation-delay: 5s;
+}
+
+@keyframes chipFloat {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.85;
+  }
+
+  50% {
+    transform: translateY(-8px) scale(1.05);
+    opacity: 1;
+  }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .page-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .page-hero-art {
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-hero {
+    padding: 72px 0 56px;
+  }
+
+  .page-hero-art {
+    max-width: 280px;
+  }
+
+  .chip {
+    font-size: 0.6rem;
+    padding: 5px 10px;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+
+  .ring,
+  .orbit-path,
+  .orbit-group,
+  .spark line,
+  .calendar,
+  .cal-page-1,
+  .cal-page-2,
+  .cal-page-3,
+  .chip,
+  .art-glow {
+    animation: none !important;
+  }
+
+  .ring {
+    opacity: 0.35;
+    transform: scale(1.6);
+  }
+}
